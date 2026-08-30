@@ -1,14 +1,17 @@
 /* =========================================================
-   DAMITH PHOTO
-   MAIN STYLE
+   DAMITH PHOTO BUSINESS
+   LUXURY CINEMATIC PHOTOGRAPHY WEBSITE
+   MAIN STYLESHEET
 ========================================================= */
 
 
 /* =========================================================
-   RESET
+   01. RESET
 ========================================================= */
 
-*{
+*,
+*::before,
+*::after{
   margin:0;
   padding:0;
   box-sizing:border-box;
@@ -17,37 +20,107 @@
 
 html{
   scroll-behavior:smooth;
+  background:#080808;
 }
 
 
 body{
+  min-height:100vh;
+
   background:#080808;
+
   color:#f5f0e8;
 
   font-family:'Montserrat',sans-serif;
 
   overflow-x:hidden;
 
-  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+
+body::selection{
+  background:#d4af37;
+  color:#080808;
 }
 
 
 img{
+  display:block;
   max-width:100%;
+}
+
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+
+button{
+  -webkit-tap-highlight-color:transparent;
 }
 
 
 a{
   color:inherit;
   text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
 }
 
 
 /* =========================================================
-   NAVIGATION
+   02. GLOBAL TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family:'Cormorant Garamond',serif;
+
+  font-weight:600;
+
+  color:#f5f0e8;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  margin:0;
+}
+
+
+em{
+  font-style:italic;
+}
+
+
+.gold-text{
+  color:#d4af37;
+}
+
+
+/* =========================================================
+   03. HEADER
 ========================================================= */
 
 .nav{
+  position:sticky;
+
+  top:0;
+  left:0;
+
   width:100%;
 
   height:90px;
@@ -60,108 +133,117 @@ a{
 
   padding:0 7%;
 
-  border-bottom:
-    1px solid rgba(212,175,55,.18);
+  background:rgba(8,8,8,.96);
 
-  position:sticky;
+  border-bottom:1px solid rgba(212,175,55,.18);
 
-  top:0;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
 
   z-index:1000;
-
-  background:
-    rgba(8,8,8,.94);
-
-  backdrop-filter:
-    blur(14px);
-
-  -webkit-backdrop-filter:
-    blur(14px);
 }
 
 
 /* =========================================================
-   HEADER LOGO
+   04. HEADER LOGO
 ========================================================= */
 
 .header-logo{
-  width:48px;
-
-  height:48px;
+  width:52px;
+  height:52px;
 
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
-  flex-shrink:0;
+  flex:0 0 52px;
 
   overflow:hidden;
+
+  position:relative;
+
+  z-index:1002;
 
   cursor:pointer;
 }
 
 
 .header-logo img{
-  width:48px !important;
+  width:52px !important;
+  height:52px !important;
 
-  height:48px !important;
-
-  max-width:none;
-
-  display:block;
+  max-width:none !important;
 
   object-fit:contain;
 
-  border:0;
+  display:block;
 
   margin:0;
-
   padding:0;
+
+  border:0;
+
+  border-radius:0;
+
+  box-shadow:none;
 }
 
 
 /* =========================================================
-   NAV LINKS
+   05. DESKTOP NAVIGATION
 ========================================================= */
 
-nav{
+.nav nav{
   display:flex;
 
   align-items:center;
 
-  gap:28px;
+  justify-content:flex-end;
+
+  gap:30px;
+
+  margin-left:auto;
 }
 
 
-nav a{
+.nav nav a{
   position:relative;
 
-  font-size:12px;
+  display:inline-block;
+
+  padding:10px 0;
+
+  color:#aaa;
+
+  font-family:'Montserrat',sans-serif;
+
+  font-size:11px;
+
+  font-weight:500;
 
   letter-spacing:2px;
 
+  line-height:1;
+
   text-transform:uppercase;
 
-  color:#aaa;
+  white-space:nowrap;
 
   transition:
     color .3s ease;
 }
 
 
-nav a::after{
+.nav nav a::after{
   content:"";
 
   position:absolute;
 
   left:0;
-
-  bottom:-8px;
+  bottom:0;
 
   width:0;
-
   height:1px;
 
   background:#d4af37;
@@ -171,58 +253,89 @@ nav a::after{
 }
 
 
-nav a:hover{
+.nav nav a:hover{
   color:#d4af37;
 }
 
 
-nav a:hover::after,
-nav a.active::after{
+.nav nav a:hover::after,
+.nav nav a.active::after{
   width:100%;
 }
 
 
-nav a.active{
+.nav nav a.active{
   color:#d4af37;
 }
 
 
 /* =========================================================
-   MOBILE MENU
+   06. MOBILE MENU BUTTON
 ========================================================= */
 
 .menu{
   display:none;
 
-  width:42px;
-
-  height:42px;
+  width:44px;
+  height:44px;
 
   align-items:center;
-
   justify-content:center;
 
-  background:transparent;
+  padding:0;
 
-  border:0;
+  border:1px solid rgba(212,175,55,.25);
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.03);
 
   color:#d4af37;
 
-  font-size:28px;
+  font-size:24px;
 
   line-height:1;
 
   cursor:pointer;
+
+  position:relative;
+
+  z-index:1002;
+
+  transition:
+    background .3s ease,
+    border-color .3s ease,
+    transform .3s ease;
+}
+
+
+.menu:hover{
+  background:rgba(212,175,55,.08);
+
+  border-color:rgba(212,175,55,.6);
+}
+
+
+.menu:active{
+  transform:scale(.94);
+}
+
+
+.menu span{
+  display:block;
+
+  line-height:1;
 }
 
 
 /* =========================================================
-   HERO
+   07. HERO
 ========================================================= */
 
 .hero{
-  min-height:
-    calc(100vh - 90px);
+  width:100%;
+
+  min-height:calc(100vh - 90px);
 
   display:grid;
 
@@ -234,8 +347,7 @@ nav a.active{
 
   gap:60px;
 
-  padding:
-    70px 8%;
+  padding:70px 8%;
 }
 
 
@@ -248,49 +360,39 @@ nav a.active{
 }
 
 
-/* =========================================================
-   EYEBROW
-========================================================= */
-
 .eyebrow{
-  font-size:11px;
-
-  letter-spacing:4px;
+  margin-bottom:25px;
 
   color:#d4af37;
 
-  margin-bottom:25px;
+  font-size:11px;
+
+  font-weight:500;
+
+  letter-spacing:4px;
 
   line-height:1.6;
+
+  text-transform:uppercase;
 }
 
 
-/* =========================================================
-   HEADINGS
-========================================================= */
+.hero h1{
+  margin-bottom:35px;
 
-h1,
-h2{
-  font-family:
-    'Cormorant Garamond',
-    serif;
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(70px,9vw,140px);
 
   font-weight:600;
 
-  line-height:.9;
+  line-height:.88;
+
+  letter-spacing:-2px;
 }
 
 
-h1{
-  font-size:
-    clamp(70px,9vw,140px);
-
-  margin-bottom:35px;
-}
-
-
-h1 em,
-h2 em{
+.hero h1 em{
   color:#d4af37;
 
   font-weight:500;
@@ -299,39 +401,33 @@ h2 em{
 }
 
 
-/* =========================================================
-   HERO DESCRIPTION
-========================================================= */
-
 .lead{
   max-width:580px;
+
+  margin-bottom:35px;
+
+  color:#aaa;
 
   font-size:16px;
 
   line-height:1.9;
-
-  color:#aaa;
-
-  margin-bottom:35px;
 }
 
 
 /* =========================================================
-   BUTTON AREA
+   08. HERO BUTTONS
 ========================================================= */
 
 .actions{
   display:flex;
+
+  align-items:center;
 
   gap:15px;
 
   flex-wrap:wrap;
 }
 
-
-/* =========================================================
-   BUTTON
-========================================================= */
 
 .btn{
   display:inline-flex;
@@ -342,8 +438,11 @@ h2 em{
 
   min-height:50px;
 
-  padding:
-    16px 30px;
+  padding:16px 30px;
+
+  border:1px solid transparent;
+
+  font-family:'Montserrat',sans-serif;
 
   font-size:11px;
 
@@ -351,72 +450,80 @@ h2 em{
 
   letter-spacing:2px;
 
+  line-height:1;
+
   text-transform:uppercase;
 
-  transition:
-    transform .4s ease,
-    background .4s ease,
-    color .4s ease,
-    box-shadow .4s ease;
-
   cursor:pointer;
+
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 }
 
-
-/* GOLD */
 
 .btn.gold{
   background:#d4af37;
 
-  color:#090909;
+  color:#080808;
 
   box-shadow:
-    0 0 25px
-    rgba(212,175,55,.18);
+    0 0 25px rgba(212,175,55,.18);
 }
 
 
 .btn.gold:hover{
-  transform:
-    translateY(-4px);
+  transform:translateY(-4px);
+
+  background:#e0bd4b;
 
   box-shadow:
-    0 12px 35px
-    rgba(212,175,55,.3);
+    0 12px 35px rgba(212,175,55,.30);
 }
 
 
-/* OUTLINE */
-
 .btn.ghost{
-  border:
-    1px solid
-    rgba(212,175,55,.55);
+  background:transparent;
+
+  border-color:rgba(212,175,55,.55);
 
   color:#d4af37;
-
-  background:transparent;
 }
 
 
 .btn.ghost:hover{
+  transform:translateY(-4px);
+
   background:#d4af37;
 
-  color:#080808;
+  border-color:#d4af37;
 
-  transform:
-    translateY(-4px);
+  color:#080808;
+}
+
+
+.btn:focus-visible,
+.text-link:focus-visible,
+.nav a:focus-visible{
+  outline:2px solid #d4af37;
+
+  outline-offset:5px;
 }
 
 
 /* =========================================================
-   HERO LOGO
+   09. HERO LOGO AREA
 ========================================================= */
 
 .hero-card{
-  height:600px;
-
   position:relative;
+
+  width:100%;
+
+  height:600px;
 
   display:flex;
 
@@ -428,110 +535,103 @@ h2 em{
 }
 
 
-/* GOLD RING */
+/* =========================================================
+   10. GOLD ORBIT
+========================================================= */
 
 .logo-orbit{
   position:absolute;
 
   width:300px;
-
   height:300px;
+
+  border:2px solid #d4af37;
 
   border-radius:50%;
 
-  border:
-    2px solid #d4af37;
-
   box-shadow:
-    0 0 18px
-    rgba(212,175,55,.45),
-
-    0 0 45px
-    rgba(212,175,55,.18);
+    0 0 18px rgba(212,175,55,.45),
+    0 0 45px rgba(212,175,55,.18);
 
   animation:
     logoSpin 10s linear infinite;
 
   z-index:1;
+
+  pointer-events:none;
 }
 
-
-/* MOVING GOLD LIGHT */
 
 .logo-orbit::before{
   content:"";
 
   position:absolute;
 
-  width:10px;
+  top:-6px;
+  left:50%;
 
+  width:10px;
   height:10px;
 
   border-radius:50%;
 
   background:#f4d35e;
 
-  top:-6px;
-
-  left:50%;
-
-  transform:
-    translateX(-50%);
+  transform:translateX(-50%);
 
   box-shadow:
     0 0 15px #d4af37,
-
     0 0 30px #d4af37,
-
-    0 0 50px
-    rgba(212,175,55,.7);
+    0 0 50px rgba(212,175,55,.7);
 }
 
-
-/* MAIN LOGO */
-
-.hero-card .main-logo{
-  width:274px;
-
-  height:274px;
-
-  max-width:none;
-
-  object-fit:cover;
-
-  border-radius:50%;
-
-  position:relative;
-
-  z-index:2;
-
-  display:block;
-
-  border:0;
-
-  box-shadow:none;
-}
-
-
-/* RING ANIMATION */
 
 @keyframes logoSpin{
 
   from{
-    transform:
-      rotate(0deg);
+    transform:rotate(0deg);
   }
 
   to{
-    transform:
-      rotate(360deg);
+    transform:rotate(360deg);
   }
 
 }
 
 
 /* =========================================================
-   MARQUEE
+   11. MAIN HERO LOGO
+========================================================= */
+
+.hero-card .main-logo{
+  position:relative;
+
+  z-index:2;
+
+  width:274px !important;
+  height:274px !important;
+
+  max-width:none !important;
+
+  object-fit:cover;
+
+  display:block;
+
+  margin:0;
+  padding:0;
+
+  border:0;
+
+  border-radius:50%;
+
+  box-shadow:none;
+
+  background:transparent;
+}
+
+
+/* =========================================================
+   12. MARQUEE
 ========================================================= */
 
 .marquee{
@@ -541,15 +641,13 @@ h2 em{
 
   white-space:nowrap;
 
-  border-top:
-    1px solid
-    rgba(212,175,55,.18);
-
-  border-bottom:
-    1px solid
-    rgba(212,175,55,.18);
-
   padding:20px 0;
+
+  border-top:1px solid rgba(212,175,55,.18);
+
+  border-bottom:1px solid rgba(212,175,55,.18);
+
+  background:#080808;
 
   color:#d4af37;
 
@@ -572,58 +670,74 @@ h2 em{
 @keyframes marquee{
 
   from{
-    transform:
-      translateX(0);
+    transform:translateX(0);
   }
 
   to{
-    transform:
-      translateX(-100%);
+    transform:translateX(-100%);
   }
 
 }
 
 
 /* =========================================================
-   INTRO
+   13. INTRO
 ========================================================= */
 
 .intro{
-  max-width:900px;
+  width:100%;
 
-  padding:
-    160px 8%;
+  max-width:1000px;
+
+  padding:160px 8%;
 }
 
 
 .intro h2,
 .cta h2{
-  font-size:
-    clamp(55px,7vw,100px);
-
   margin-bottom:35px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(55px,7vw,100px);
+
+  font-weight:600;
+
+  line-height:.9;
+}
+
+
+.intro h2 em,
+.cta h2 em{
+  color:#d4af37;
+
+  font-weight:500;
 }
 
 
 .intro > p:not(.eyebrow){
   max-width:650px;
 
-  color:#999;
+  margin-bottom:30px;
 
-  line-height:1.9;
+  color:#999;
 
   font-size:16px;
 
-  margin-bottom:30px;
+  line-height:1.9;
 }
 
 
 /* =========================================================
-   TEXT LINK
+   14. TEXT LINK
 ========================================================= */
 
 .text-link{
   display:inline-block;
+
+  padding-bottom:5px;
+
+  border-bottom:1px solid #d4af37;
 
   color:#d4af37;
 
@@ -631,50 +745,42 @@ h2 em{
 
   letter-spacing:2px;
 
-  border-bottom:
-    1px solid #d4af37;
-
-  padding-bottom:5px;
-
   transition:
     opacity .3s ease;
 }
 
 
 .text-link:hover{
-  opacity:.7;
+  opacity:.65;
 }
 
 
 /* =========================================================
-   STATS
+   15. STATS
 ========================================================= */
 
 .stats{
+  width:100%;
+
   display:grid;
 
   grid-template-columns:
-    repeat(4,1fr);
+    repeat(4,minmax(0,1fr));
 
-  border-top:
-    1px solid
-    rgba(212,175,55,.18);
+  border-top:1px solid rgba(212,175,55,.18);
 
-  border-bottom:
-    1px solid
-    rgba(212,175,55,.18);
+  border-bottom:1px solid rgba(212,175,55,.18);
 }
 
 
 .stats div{
-  padding:
-    55px 20px;
+  min-width:0;
+
+  padding:55px 20px;
 
   text-align:center;
 
-  border-right:
-    1px solid
-    rgba(212,175,55,.18);
+  border-right:1px solid rgba(212,175,55,.18);
 }
 
 
@@ -686,40 +792,45 @@ h2 em{
 .stats strong{
   display:block;
 
-  font-family:
-    'Cormorant Garamond',
-    serif;
-
-  font-size:55px;
+  margin-bottom:10px;
 
   color:#d4af37;
 
-  margin-bottom:10px;
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:55px;
+
+  font-weight:600;
+
+  line-height:1;
 }
 
 
 .stats span{
   display:block;
 
+  color:#888;
+
   font-size:10px;
+
+  font-weight:500;
 
   letter-spacing:2px;
 
-  color:#888;
+  line-height:1.5;
 
   text-transform:uppercase;
-
-  line-height:1.5;
 }
 
 
 /* =========================================================
-   CTA
+   16. CTA
 ========================================================= */
 
 .cta{
-  padding:
-    160px 8%;
+  width:100%;
+
+  padding:160px 8%;
 
   text-align:center;
 
@@ -732,39 +843,45 @@ h2 em{
 }
 
 
+.cta .eyebrow{
+  margin-bottom:25px;
+}
+
+
 .cta h2{
   margin-bottom:40px;
 }
 
 
 /* =========================================================
-   FOOTER
+   17. FOOTER
 ========================================================= */
 
 footer{
-  padding:
-    70px 8%;
+  width:100%;
 
-  border-top:
-    1px solid
-    rgba(212,175,55,.18);
+  padding:70px 8%;
+
+  border-top:1px solid rgba(212,175,55,.18);
 
   text-align:center;
+
+  background:#080808;
 }
 
 
 .footer-logo{
   margin-bottom:20px;
 
-  font-family:
-    'Cormorant Garamond',
-    serif;
+  color:#f5f0e8;
+
+  font-family:'Cormorant Garamond',serif;
 
   font-size:30px;
 
-  letter-spacing:3px;
+  font-weight:600;
 
-  color:#f5f0e8;
+  letter-spacing:3px;
 }
 
 
@@ -774,11 +891,13 @@ footer{
 
 
 footer p{
+  margin:10px;
+
   color:#777;
 
   font-size:12px;
 
-  margin:10px;
+  line-height:1.7;
 }
 
 
@@ -811,14 +930,13 @@ footer small{
 
 
 /* =========================================================
-   SCROLL REVEAL
+   18. SCROLL REVEAL
 ========================================================= */
 
 .reveal{
   opacity:0;
 
-  transform:
-    translateY(45px);
+  transform:translateY(45px);
 
   transition:
     opacity 1s ease,
@@ -829,20 +947,21 @@ footer small{
 .reveal.visible{
   opacity:1;
 
-  transform:
-    translateY(0);
+  transform:translateY(0);
 }
 
 
 /* =========================================================
-   CURSOR GLOW
+   19. CURSOR GLOW
 ========================================================= */
 
 .cursor-glow{
   position:fixed;
 
-  width:180px;
+  left:-300px;
+  top:-300px;
 
+  width:180px;
   height:180px;
 
   border-radius:50%;
@@ -856,63 +975,170 @@ footer small{
       transparent 70%
     );
 
-  transform:
-    translate(-50%,-50%);
+  transform:translate(-50%,-50%);
 
   z-index:9999;
 
-  left:-300px;
+  opacity:0;
 
-  top:-300px;
+  transition:opacity .2s ease;
 }
 
 
 /* =========================================================
-   TABLET / MOBILE
+   20. PAGE LOADING
+========================================================= */
+
+body.loaded{
+  background:#080808;
+}
+
+
+/* =========================================================
+   21. GENERIC PAGE CONTENT
+   Helps Profile / Photography / Services / About / Contact
+========================================================= */
+
+main{
+  width:100%;
+
+  background:#080808;
+}
+
+
+.page,
+.page-section,
+.content-section{
+  width:100%;
+
+  padding:120px 8%;
+}
+
+
+.page-title,
+.page-section h1{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(60px,8vw,110px);
+
+  font-weight:600;
+
+  line-height:.9;
+}
+
+
+.page-title em,
+.page-section h1 em{
+  color:#d4af37;
+}
+
+
+.page-section p{
+  max-width:700px;
+
+  color:#999;
+
+  font-size:16px;
+
+  line-height:1.9;
+}
+
+
+/* =========================================================
+   22. FORM ELEMENTS
+   Useful for CONTACT page
+========================================================= */
+
+input,
+textarea,
+select{
+  width:100%;
+
+  background:#101010;
+
+  color:#f5f0e8;
+
+  border:1px solid rgba(212,175,55,.22);
+
+  border-radius:0;
+
+  outline:none;
+
+  padding:15px 16px;
+
+  transition:
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+
+input::placeholder,
+textarea::placeholder{
+  color:#666;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:#d4af37;
+
+  box-shadow:
+    0 0 0 2px rgba(212,175,55,.08);
+}
+
+
+textarea{
+  min-height:150px;
+
+  resize:vertical;
+}
+
+
+/* =========================================================
+   23. MOBILE — 800PX
 ========================================================= */
 
 @media(max-width:800px){
 
-  /* HEADER */
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
 
   .nav{
     height:75px;
 
-    padding:
-      0 6%;
+    padding:0 6%;
   }
 
 
-  /* HEADER LOGO */
-
   .header-logo{
     width:40px;
-
     height:40px;
+
+    flex-basis:40px;
   }
 
 
   .header-logo img{
     width:40px !important;
-
     height:40px !important;
   }
 
-
-  /* MENU */
 
   .menu{
     display:flex;
   }
 
 
-  /* MOBILE NAV */
+  /* -----------------------------------------
+     MOBILE NAV
+  ----------------------------------------- */
 
-  nav{
+  .nav nav{
     position:absolute;
 
     top:75px;
-
     left:0;
 
     width:100%;
@@ -923,73 +1149,83 @@ footer small{
 
     align-items:flex-start;
 
+    justify-content:flex-start;
+
     gap:0;
 
-    padding:
-      25px 8%;
+    margin:0;
 
-    background:#080808;
+    padding:25px 8%;
 
-    border-bottom:
-      1px solid
-      rgba(212,175,55,.2);
+    background:
+      rgba(8,8,8,.98);
+
+    border-bottom:1px solid rgba(212,175,55,.2);
 
     box-shadow:
-      0 20px 40px
-      rgba(0,0,0,.35);
+      0 20px 50px rgba(0,0,0,.45);
   }
 
 
-  nav.open{
+  .nav nav.open{
     display:flex;
   }
 
 
-  nav a{
+  .nav nav a{
     width:100%;
 
-    padding:
-      13px 0;
+    padding:15px 0;
 
     font-size:12px;
+
+    line-height:1.2;
   }
 
 
-  nav a::after{
+  .nav nav a::after{
     display:none;
   }
 
 
-  /* HERO */
+  /* -----------------------------------------
+     HERO
+  ----------------------------------------- */
 
   .hero{
+    min-height:auto;
+
     grid-template-columns:1fr;
 
-    min-height:auto;
+    gap:20px;
 
     padding:
       60px 7%
       40px;
-
-    gap:20px;
   }
 
 
-  h1{
+  .hero h1{
     font-size:58px;
 
     line-height:.92;
+
+    letter-spacing:-1px;
   }
 
 
   .lead{
+    max-width:100%;
+
     font-size:14px;
 
     line-height:1.8;
   }
 
 
-  /* LOGO */
+  /* -----------------------------------------
+     HERO LOGO
+  ----------------------------------------- */
 
   .hero-card{
     height:360px;
@@ -1000,19 +1236,19 @@ footer small{
 
   .logo-orbit{
     width:270px;
-
     height:270px;
   }
 
 
   .hero-card .main-logo{
-    width:244px;
-
-    height:244px;
+    width:244px !important;
+    height:244px !important;
   }
 
 
-  /* INTRO */
+  /* -----------------------------------------
+     INTRO
+  ----------------------------------------- */
 
   .intro{
     padding:
@@ -1020,7 +1256,17 @@ footer small{
   }
 
 
-  /* STATS */
+  .intro h2,
+  .cta h2{
+    font-size:60px;
+
+    line-height:.92;
+  }
+
+
+  /* -----------------------------------------
+     STATS
+  ----------------------------------------- */
 
   .stats{
     grid-template-columns:
@@ -1029,12 +1275,9 @@ footer small{
 
 
   .stats div{
-    padding:
-      45px 15px;
+    padding:45px 15px;
 
-    border-bottom:
-      1px solid
-      rgba(212,175,55,.18);
+    border-bottom:1px solid rgba(212,175,55,.18);
   }
 
 
@@ -1043,12 +1286,26 @@ footer small{
   }
 
 
+  .stats div:nth-child(3){
+    border-bottom:0;
+  }
+
+
+  .stats div:nth-child(4){
+    border-right:0;
+
+    border-bottom:0;
+  }
+
+
   .stats strong{
     font-size:45px;
   }
 
 
-  /* CTA */
+  /* -----------------------------------------
+     CTA
+  ----------------------------------------- */
 
   .cta{
     padding:
@@ -1056,35 +1313,80 @@ footer small{
   }
 
 
-  /* FOOTER */
+  /* -----------------------------------------
+     FOOTER
+  ----------------------------------------- */
 
   footer{
     padding:
       55px 7%;
   }
 
+
+  /* -----------------------------------------
+     GENERIC PAGES
+  ----------------------------------------- */
+
+  .page,
+  .page-section,
+  .content-section{
+    padding:
+      100px 7%;
+  }
+
+
+  .page-title,
+  .page-section h1{
+    font-size:60px;
+  }
+
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   24. SMALL MOBILE — 500PX
 ========================================================= */
 
 @media(max-width:500px){
 
   /* HEADER */
 
+  .nav{
+    height:70px;
+
+    padding:0 5%;
+  }
+
+
   .header-logo{
     width:36px;
-
     height:36px;
+
+    flex-basis:36px;
   }
 
 
   .header-logo img{
     width:36px !important;
-
     height:36px !important;
+  }
+
+
+  .menu{
+    width:40px;
+    height:40px;
+
+    font-size:22px;
+  }
+
+
+  /* MOBILE NAV */
+
+  .nav nav{
+    top:70px;
+
+    padding:
+      22px 7%;
   }
 
 
@@ -1097,41 +1399,51 @@ footer small{
   }
 
 
-  h1{
-    font-size:54px;
-  }
-
-
   .eyebrow{
+    margin-bottom:20px;
+
     font-size:9px;
 
     letter-spacing:3px;
   }
 
 
+  .hero h1{
+    font-size:54px;
+
+    line-height:.94;
+  }
+
+
   .lead{
+    margin-bottom:30px;
+
     font-size:13px;
+
+    line-height:1.8;
   }
 
 
   /* BUTTONS */
 
   .actions{
+    width:100%;
+
     flex-direction:column;
 
     align-items:flex-start;
 
-    width:100%;
+    gap:12px;
   }
 
 
   .btn{
-    width:auto;
-
     min-height:48px;
 
     padding:
       15px 24px;
+
+    font-size:10px;
   }
 
 
@@ -1139,20 +1451,31 @@ footer small{
 
   .hero-card{
     height:330px;
+
+    margin-top:10px;
   }
 
 
   .logo-orbit{
     width:240px;
-
     height:240px;
   }
 
 
   .hero-card .main-logo{
-    width:218px;
+    width:218px !important;
+    height:218px !important;
+  }
 
-    height:218px;
+
+  /* MARQUEE */
+
+  .marquee{
+    padding:17px 0;
+
+    font-size:10px;
+
+    letter-spacing:2px;
   }
 
 
@@ -1172,6 +1495,13 @@ footer small{
   }
 
 
+  .intro > p:not(.eyebrow){
+    font-size:14px;
+
+    line-height:1.8;
+  }
+
+
   /* STATS */
 
   .stats strong{
@@ -1186,17 +1516,94 @@ footer small{
   }
 
 
+  /* CTA */
+
+  .cta{
+    padding:
+      100px 7%;
+  }
+
+
   /* FOOTER */
+
+  footer{
+    padding:
+      50px 7%;
+  }
+
 
   .footer-logo{
     font-size:25px;
+  }
+
+
+  footer p{
+    font-size:11px;
+  }
+
+
+  /* GENERIC PAGES */
+
+  .page,
+  .page-section,
+  .content-section{
+    padding:
+      85px 7%;
+  }
+
+
+  .page-title,
+  .page-section h1{
+    font-size:52px;
+  }
+
+
+}
+
+
+/* =========================================================
+   25. VERY SMALL DEVICES — 360PX
+========================================================= */
+
+@media(max-width:360px){
+
+  .hero h1{
+    font-size:48px;
+  }
+
+
+  .hero-card{
+    height:300px;
+  }
+
+
+  .logo-orbit{
+    width:220px;
+    height:220px;
+  }
+
+
+  .hero-card .main-logo{
+    width:200px !important;
+    height:200px !important;
+  }
+
+
+  .intro h2,
+  .cta h2{
+    font-size:46px;
+  }
+
+
+  .stats strong{
+    font-size:38px;
   }
 
 }
 
 
 /* =========================================================
-   REDUCED MOTION
+   26. REDUCED MOTION
 ========================================================= */
 
 @media(prefers-reduced-motion:reduce){
@@ -1209,11 +1616,11 @@ footer small{
   *,
   *::before,
   *::after{
-    animation-duration:0.01ms !important;
+    animation-duration:.01ms !important;
 
     animation-iteration-count:1 !important;
 
-    transition-duration:0.01ms !important;
+    transition-duration:.01ms !important;
   }
 
 }
