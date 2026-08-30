@@ -615,3 +615,17 @@ footer small{
   }
 
 }
+/* HEADER LOGO ONLY */
+.nav > .logo img{
+  width:55px !important;
+  height:auto !important;
+  display:block;
+}
+
+/* MOBILE HEADER LOGO ONLY */
+@media(max-width:800px){
+  .nav > .logo img{
+    width:50px !important;
+    height:auto !important;
+  }
+}
