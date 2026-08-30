@@ -356,3 +356,86 @@ footer p{
     grid-template-columns:1fr 1fr;
   }
 }
+/* =========================
+   ROUND LOGO
+========================= */
+
+.hero-card{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Gold animated ring */
+.logo-orbit{
+  position:absolute;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  border:2px solid #d4af37;
+  box-shadow:
+    0 0 20px rgba(212,175,55,.35),
+    0 0 50px rgba(212,175,55,.15);
+  animation:logoSpin 10s linear infinite;
+  z-index:1;
+}
+
+/* Moving gold light */
+.logo-orbit::before{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#f4d35e;
+  top:-6px;
+  left:50%;
+  box-shadow:
+    0 0 15px #d4af37,
+    0 0 30px #d4af37;
+}
+
+/* Circular logo */
+.main-logo{
+  width:280px;
+  height:280px;
+  object-fit:cover;
+  border-radius:50%;
+  position:relative;
+  z-index:3;
+  display:block;
+
+  border:1px solid rgba(212,175,55,.35);
+
+  box-shadow:
+    0 0 20px rgba(212,175,55,.15);
+}
+
+/* Rotation */
+@keyframes logoSpin{
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .main-logo{
+    width:220px;
+    height:220px;
+  }
+
+  .logo-orbit{
+    width:280px;
+    height:280px;
+  }
+
+}
