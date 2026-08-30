@@ -650,3 +650,168 @@ width:auto;
   }
 
 }
+/* ===== LOGO FIX ===== */
+
+.nav .logo{
+    display:flex;
+    align-items:center;
+}
+
+.nav .logo img{
+    width:150px;
+    height:auto;
+    display:block;
+}
+
+
+/* ===== HERO LOGO ===== */
+
+.hero-card{
+    height:600px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.main-logo{
+    width:280px;
+    height:auto;
+    display:block;
+    position:relative;
+    z-index:3;
+    object-fit:contain;
+}
+
+
+/* GOLD ANIMATION AROUND LOGO */
+
+.logo-orbit{
+    position:absolute;
+    width:360px;
+    height:360px;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,.75);
+    box-shadow:
+        0 0 20px rgba(212,175,55,.18),
+        0 0 55px rgba(212,175,55,.10);
+    animation:logoOrbit 10s linear infinite;
+    z-index:1;
+}
+
+.logo-orbit::before{
+    content:"";
+    position:absolute;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#d4af37;
+    top:-5px;
+    left:50%;
+    box-shadow:0 0 18px #d4af37;
+}
+
+.logo-orbit::after{
+    content:"";
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#f4d35e;
+    bottom:-4px;
+    left:50%;
+    box-shadow:0 0 15px #d4af37;
+}
+
+@keyframes logoOrbit{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav .logo img{
+        width:110px;
+    }
+
+    .hero-card{
+        height:430px;
+    }
+
+    .main-logo{
+        width:180px;
+    }
+
+    .logo-orbit{
+        width:250px;
+        height:250px;
+    }
+
+/* NEW LOGO */
+
+.main-logo{
+  width:280px !important;
+  height:auto !important;
+  position:relative;
+  z-index:5;
+  display:block;
+}
+
+.logo-orbit{
+  position:absolute;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  border:2px solid #d4af37;
+  box-shadow:0 0 30px rgba(212,175,55,.35);
+  animation:logoSpin 8s linear infinite;
+  z-index:1;
+}
+
+}
+.logo-orbit:before{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#f4d35e;
+  top:-6px;
+  left:50%;
+  box-shadow:0 0 25px #d4af37;
+}
+
+@keyframes logoSpin{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@media(max-width:800px){
+
+  .main-logo{
+    width:180px !important;
+  }
+
+  .logo-orbit{
+    width:250px;
+    height:250px;
+  }
+
+  .nav .logo img{
+    width:100px !important;
+    height:auto !important;
+  }
+
+}
