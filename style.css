@@ -181,99 +181,45 @@ align-items:center;
 justify-content:center;
 }
 
-.frame{
-width:72%;
-height:82%;
-border:1px solid rgba(212,175,55,.65);
+.main-logo{
 position:relative;
 z-index:2;
-overflow:hidden;
-background:
-linear-gradient(
-135deg,
-rgba(212,175,55,.12),
-rgba(0,0,0,.8)
-);
-box-shadow:
-0 0 80px rgba(212,175,55,.12),
-inset 0 0 60px rgba(212,175,55,.05);
-animation:float 6s ease-in-out infinite;
+width:380px;
+height:auto;
+display:block;
 }
 
-.frame:before,
-.frame:after{
+.logo-orbit{
+position:absolute;
+width:400px;
+height:400px;
+border:2px solid #d4af37;
+border-radius:50%;
+animation:logoSpin 8s linear infinite;
+box-shadow:0 0 25px rgba(212,175,55,.35);
+}
+
+.logo-orbit::after{
 content:"";
 position:absolute;
+width:8px;
+height:8px;
 background:#d4af37;
-}
-
-.frame:before{
-width:1px;
-height:100%;
-left:18px;
-top:0;
-opacity:.4;
-}
-
-.frame:after{
-height:1px;
-width:100%;
-left:0;
-top:18px;
-opacity:.4;
-}
-
-.frame-content{
-height:100%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-family:'Cormorant Garamond',serif;
-font-size:150px;
-font-weight:700;
-color:rgba(212,175,55,.18);
-}
-
-.gold-circle{
-position:absolute;
-width:360px;
-height:360px;
 border-radius:50%;
-border:1px solid rgba(212,175,55,.25);
-box-shadow:
-0 0 80px rgba(212,175,55,.12);
-animation:rotate 18s linear infinite;
-}
-
-.gold-circle:before{
-content:"";
-position:absolute;
-width:12px;
-height:12px;
-border-radius:50%;
-background:#d4af37;
-top:-6px;
+top:-5px;
 left:50%;
-box-shadow:0 0 25px #d4af37;
+box-shadow:0 0 15px #d4af37;
 }
 
-.stamp{
-position:absolute;
-bottom:45px;
-right:5%;
-font-family:'Cormorant Garamond',serif;
-font-size:45px;
-font-weight:700;
-color:#d4af37;
-line-height:.8;
-z-index:3;
+@keyframes logoSpin{
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
 }
 
-.stamp small{
-font-family:'Montserrat',sans-serif;
-font-size:9px;
-letter-spacing:5px;
-}
 
 
 /* MARQUEE */
@@ -529,14 +475,13 @@ height:430px;
 margin-top:20px;
 }
 
-.frame{
-width:75%;
-height:80%;
+.main-logo{
+width:300px;
 }
 
-.gold-circle{
-width:270px;
-height:270px;
+.logo-orbit{
+width:320px;
+height:320px;
 }
 
 .intro{
