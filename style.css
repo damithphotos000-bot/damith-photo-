@@ -22,7 +22,7 @@ a{
 
 
 /* =========================
-   NAVIGATION
+   NAV
 ========================= */
 
 .nav{
@@ -46,10 +46,9 @@ a{
 
 .nav .logo img{
   width:110px;
-  height:110px;
-  object-fit:cover;
-  border-radius:50%;
+  height:auto;
   display:block;
+  object-fit:contain;
 }
 
 nav{
@@ -130,11 +129,6 @@ h2 em{
   margin-bottom:35px;
 }
 
-
-/* =========================
-   BUTTONS
-========================= */
-
 .actions{
   display:flex;
   gap:15px;
@@ -152,28 +146,14 @@ h2 em{
 }
 
 .btn.gold{
-  background:linear-gradient(
-    110deg,
-    #9b7617,
-    #f4d35e,
-    #b8860b,
-    #f6e27a
-  );
-
-  background-size:250% 100%;
+  background:#d4af37;
   color:#090909;
-
-  box-shadow:
-    0 0 30px rgba(212,175,55,.18);
-
-  animation:goldMove 5s ease infinite;
+  box-shadow:0 0 25px rgba(212,175,55,.18);
 }
 
 .btn.gold:hover{
   transform:translateY(-4px);
-
-  box-shadow:
-    0 12px 40px rgba(212,175,55,.35);
+  box-shadow:0 12px 35px rgba(212,175,55,.3);
 }
 
 .btn.ghost{
@@ -189,68 +169,40 @@ h2 em{
 
 
 /* =========================
-   HERO LOGO AREA
+   HERO LOGO
 ========================= */
 
 .hero-card{
   height:600px;
   position:relative;
-
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
 
-/* =========================
-   ROUND LOGO
-========================= */
-
-.main-logo{
-  width:300px;
-  height:300px;
-
-  object-fit:cover;
-  border-radius:50%;
-
-  display:block;
-
-  position:relative;
-  z-index:5;
-
-  border:none;
-  outline:none;
-
-  box-shadow:
-    0 0 25px rgba(212,175,55,.18);
-}
-
-
-/* =========================
-   GOLD ANIMATED RING
-========================= */
+/* Gold animated ring */
 
 .logo-orbit{
   position:absolute;
 
-  width:370px;
-  height:370px;
+  width:300px;
+  height:300px;
 
   border-radius:50%;
-
-  border:2px solid rgba(212,175,55,.85);
+  border:2px solid #d4af37;
 
   box-shadow:
-    0 0 20px rgba(212,175,55,.35),
-    0 0 55px rgba(212,175,55,.15);
+    0 0 18px rgba(212,175,55,.45),
+    0 0 45px rgba(212,175,55,.18);
 
   animation:logoSpin 10s linear infinite;
 
-  z-index:2;
+  z-index:1;
 }
 
 
-/* GOLD MOVING DOT */
+/* Moving gold light */
 
 .logo-orbit::before{
   content:"";
@@ -274,31 +226,30 @@ h2 em{
 }
 
 
-/* SECOND SMALL DOT */
+/* =========================
+   ROUND LOGO
+========================= */
 
-.logo-orbit::after{
-  content:"";
+.main-logo{
+  width:274px;
+  height:274px;
 
-  position:absolute;
-
-  width:6px;
-  height:6px;
+  object-fit:cover;
 
   border-radius:50%;
 
-  background:#d4af37;
+  position:relative;
+  z-index:2;
 
-  bottom:-4px;
-  left:50%;
+  display:block;
 
-  box-shadow:
-    0 0 15px #d4af37;
+  border:none;
+
+  box-shadow:none;
 }
 
 
-/* =========================
-   LOGO ROTATION
-========================= */
+/* Ring rotation */
 
 @keyframes logoSpin{
 
@@ -308,27 +259,6 @@ h2 em{
 
   to{
     transform:rotate(360deg);
-  }
-
-}
-
-
-/* =========================
-   GOLD BUTTON ANIMATION
-========================= */
-
-@keyframes goldMove{
-
-  0%{
-    background-position:0% 50%;
-  }
-
-  50%{
-    background-position:100% 50%;
-  }
-
-  100%{
-    background-position:0% 50%;
   }
 
 }
@@ -355,9 +285,7 @@ h2 em{
 
 .marquee div{
   display:inline-block;
-
   padding-left:100%;
-
   animation:marquee 22s linear infinite;
 }
 
@@ -391,25 +319,17 @@ h2 em{
 
 .intro > p:not(.eyebrow){
   max-width:650px;
-
   color:#999;
-
   line-height:1.9;
-
   font-size:16px;
-
   margin-bottom:30px;
 }
 
 .text-link{
   color:#d4af37;
-
   font-size:12px;
-
   letter-spacing:2px;
-
   border-bottom:1px solid #d4af37;
-
   padding-bottom:5px;
 }
 
@@ -428,7 +348,6 @@ h2 em{
 
 .stats div{
   padding:55px 20px;
-
   text-align:center;
 
   border-right:1px solid rgba(212,175,55,.18);
@@ -452,11 +371,8 @@ h2 em{
 
 .stats span{
   font-size:10px;
-
   letter-spacing:2px;
-
   color:#888;
-
   text-transform:uppercase;
 }
 
@@ -467,7 +383,6 @@ h2 em{
 
 .cta{
   padding:160px 8%;
-
   text-align:center;
 
   background:
@@ -501,21 +416,17 @@ footer .logo{
 
 footer p{
   color:#777;
-
   font-size:12px;
-
   margin:10px;
 }
 
 footer small{
   display:block;
-
   margin-top:30px;
 
   color:#555;
 
   font-size:10px;
-
   letter-spacing:1px;
 }
 
@@ -526,7 +437,6 @@ footer small{
 
 .reveal{
   opacity:0;
-
   transform:translateY(45px);
 
   transition:
@@ -536,7 +446,6 @@ footer small{
 
 .reveal.visible{
   opacity:1;
-
   transform:translateY(0);
 }
 
@@ -553,8 +462,7 @@ footer small{
   }
 
   .nav .logo img{
-    width:70px;
-    height:70px;
+    width:90px;
   }
 
   .menu{
@@ -596,53 +504,36 @@ footer small{
 
     padding:60px 7%;
 
-    gap:30px;
+    gap:20px;
   }
 
   h1{
     font-size:58px;
   }
 
-  .lead{
-    font-size:14px;
-  }
 
-
-  /* HERO LOGO */
+  /* LOGO AREA */
 
   .hero-card{
-    height:430px;
+    height:360px;
 
-    margin-top:10px;
+    margin-top:20px;
   }
 
-  .main-logo{
-    width:230px;
-    height:230px;
-  }
+
+  /* Gold ring */
 
   .logo-orbit{
-    width:300px;
-    height:300px;
+    width:270px;
+    height:270px;
   }
 
 
-  /* BUTTONS */
+  /* Circular logo */
 
-  .actions{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .btn{
-    width:auto;
-  }
-
-
-  /* INTRO */
-
-  .intro{
-    padding:110px 7%;
+  .main-logo{
+    width:244px;
+    height:244px;
   }
 
 
@@ -660,19 +551,8 @@ footer small{
     border-right:0;
   }
 
-  .stats div:nth-child(4){
-    border-right:0;
-  }
-
   .stats strong{
     font-size:45px;
-  }
-
-
-  /* CTA */
-
-  .cta{
-    padding:120px 7%;
   }
 
 }
@@ -685,21 +565,34 @@ footer small{
 @media(max-width:500px){
 
   h1{
-    font-size:52px;
+    font-size:58px;
+  }
+
+  .lead{
+    font-size:14px;
+  }
+
+  .actions{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .btn{
+    width:auto;
   }
 
   .hero-card{
-    height:390px;
-  }
-
-  .main-logo{
-    width:210px;
-    height:210px;
+    height:340px;
   }
 
   .logo-orbit{
-    width:270px;
-    height:270px;
+    width:250px;
+    height:250px;
+  }
+
+  .main-logo{
+    width:226px;
+    height:226px;
   }
 
 }
