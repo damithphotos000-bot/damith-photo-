@@ -1,3 +1,7 @@
+/* =========================================================
+   DAMITH PHOTO — MAIN STYLE
+========================================================= */
+
 *{
   margin:0;
   padding:0;
@@ -21,13 +25,12 @@ a{
 }
 
 
-/* =========================
-   NAV
-========================= */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .nav{
   height:90px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -40,49 +43,40 @@ a{
   top:0;
   z-index:1000;
 
-  background:rgba(8,8,8,.92);
-
+  background:rgba(8,8,8,.94);
   backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
 }
 
 
-/* =========================
-   HEADER LOGO
-   ONLY THIS LOGO IS SMALL
-========================= */
+/* HEADER LOGO */
 
-.header-logo{
-  width:55px;
-  height:55px;
+.nav > .logo{
+  width:48px;
+  height:48px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  flex-shrink:0;
-
   overflow:hidden;
+  flex-shrink:0;
 }
 
-.header-logo img{
-  width:55px !important;
-  height:55px !important;
-
-  max-width:55px !important;
-  max-height:55px !important;
+.nav > .logo img{
+  width:48px;
+  height:48px;
 
   object-fit:contain;
-
   display:block;
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAV LINKS */
 
 nav{
   display:flex;
+  align-items:center;
   gap:28px;
 }
 
@@ -93,7 +87,9 @@ nav a{
 
   color:#aaa;
 
-  transition:.3s;
+  transition:
+    color .3s ease,
+    transform .3s ease;
 }
 
 nav a:hover,
@@ -102,9 +98,7 @@ nav a.active{
 }
 
 
-/* =========================
-   MENU
-========================= */
+/* MENU BUTTON */
 
 .menu{
   display:none;
@@ -115,20 +109,20 @@ nav a.active{
   color:#d4af37;
 
   font-size:28px;
+  line-height:1;
 
   cursor:pointer;
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
   min-height:calc(100vh - 90px);
 
   display:grid;
-
   grid-template-columns:1fr 1fr;
 
   align-items:center;
@@ -143,6 +137,9 @@ nav a.active{
   z-index:5;
 }
 
+
+/* SMALL GOLD TITLE */
+
 .eyebrow{
   font-size:11px;
   letter-spacing:4px;
@@ -151,6 +148,9 @@ nav a.active{
 
   margin-bottom:25px;
 }
+
+
+/* HEADINGS */
 
 h1,
 h2{
@@ -170,15 +170,16 @@ h1{
 h1 em,
 h2 em{
   color:#d4af37;
-
   font-weight:500;
 }
+
+
+/* HERO DESCRIPTION */
 
 .lead{
   max-width:580px;
 
   font-size:16px;
-
   line-height:1.9;
 
   color:#aaa;
@@ -187,17 +188,16 @@ h2 em{
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTON AREA */
 
 .actions{
   display:flex;
-
   gap:15px;
-
   flex-wrap:wrap;
 }
+
+
+/* BUTTON */
 
 .btn{
   display:inline-block;
@@ -205,19 +205,23 @@ h2 em{
   padding:16px 30px;
 
   font-size:11px;
-
   font-weight:600;
 
   letter-spacing:2px;
-
   text-transform:uppercase;
 
-  transition:.4s;
+  transition:
+    transform .4s ease,
+    background .4s ease,
+    color .4s ease,
+    box-shadow .4s ease;
 }
+
+
+/* GOLD BUTTON */
 
 .btn.gold{
   background:#d4af37;
-
   color:#090909;
 
   box-shadow:
@@ -231,6 +235,9 @@ h2 em{
     0 12px 35px rgba(212,175,55,.3);
 }
 
+
+/* OUTLINE BUTTON */
+
 .btn.ghost{
   border:1px solid rgba(212,175,55,.55);
 
@@ -239,16 +246,15 @@ h2 em{
 
 .btn.ghost:hover{
   background:#d4af37;
-
   color:#080808;
 
   transform:translateY(-4px);
 }
 
 
-/* =========================
-   HERO LOGO AREA
-========================= */
+/* =========================================================
+   HERO LOGO
+========================================================= */
 
 .hero-card{
   height:600px;
@@ -256,16 +262,12 @@ h2 em{
   position:relative;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 }
 
 
-/* =========================
-   GOLD ANIMATED RING
-========================= */
+/* GOLD RING */
 
 .logo-orbit{
   position:absolute;
@@ -287,9 +289,7 @@ h2 em{
 }
 
 
-/* =========================
-   MOVING GOLD LIGHT
-========================= */
+/* MOVING GOLD LIGHT */
 
 .logo-orbit::before{
   content:"";
@@ -313,10 +313,7 @@ h2 em{
 }
 
 
-/* =========================
-   LARGE HERO LOGO
-   THIS STAYS LARGE
-========================= */
+/* HERO ROUND LOGO */
 
 .hero-card .main-logo{
   width:274px;
@@ -327,20 +324,16 @@ h2 em{
   border-radius:50%;
 
   position:relative;
-
   z-index:2;
 
   display:block;
 
   border:none;
-
   box-shadow:none;
 }
 
 
-/* =========================
-   RING ROTATION
-========================= */
+/* RING ANIMATION */
 
 @keyframes logoSpin{
 
@@ -355,9 +348,9 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    MARQUEE
-========================= */
+========================================================= */
 
 .marquee{
   overflow:hidden;
@@ -365,7 +358,6 @@ h2 em{
   white-space:nowrap;
 
   border-top:1px solid rgba(212,175,55,.18);
-
   border-bottom:1px solid rgba(212,175,55,.18);
 
   padding:20px 0;
@@ -373,7 +365,6 @@ h2 em{
   color:#d4af37;
 
   font-size:12px;
-
   letter-spacing:3px;
 }
 
@@ -382,7 +373,8 @@ h2 em{
 
   padding-left:100%;
 
-  animation:marquee 22s linear infinite;
+  animation:
+    marquee 22s linear infinite;
 }
 
 @keyframes marquee{
@@ -398,9 +390,9 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    INTRO
-========================= */
+========================================================= */
 
 .intro{
   max-width:900px;
@@ -427,11 +419,13 @@ h2 em{
   margin-bottom:30px;
 }
 
+
+/* TEXT LINK */
+
 .text-link{
   color:#d4af37;
 
   font-size:12px;
-
   letter-spacing:2px;
 
   border-bottom:1px solid #d4af37;
@@ -440,17 +434,17 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    STATS
-========================= */
+========================================================= */
 
 .stats{
   display:grid;
 
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:
+    repeat(4,1fr);
 
   border-top:1px solid rgba(212,175,55,.18);
-
   border-bottom:1px solid rgba(212,175,55,.18);
 }
 
@@ -489,9 +483,9 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    CTA
-========================= */
+========================================================= */
 
 .cta{
   padding:160px 8%;
@@ -511,9 +505,9 @@ h2 em{
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
   padding:70px 8%;
@@ -548,9 +542,9 @@ footer small{
 }
 
 
-/* =========================
-   REVEAL
-========================= */
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
 .reveal{
   opacity:0;
@@ -569,11 +563,13 @@ footer small{
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:800px){
+
+  /* HEADER */
 
   .nav{
     height:75px;
@@ -582,21 +578,16 @@ footer small{
   }
 
 
-  /* =========================
-     SMALL HEADER LOGO
-  ========================= */
+  /* SMALL HEADER LOGO ONLY */
 
-  .header-logo{
-    width:48px;
-    height:48px;
+  .nav > .logo{
+    width:38px;
+    height:38px;
   }
 
-  .header-logo img{
-    width:48px !important;
-    height:48px !important;
-
-    max-width:48px !important;
-    max-height:48px !important;
+  .nav > .logo img{
+    width:38px;
+    height:38px;
   }
 
 
@@ -607,13 +598,12 @@ footer small{
   }
 
 
-  /* NAVIGATION */
+  /* MOBILE NAV */
 
   nav{
     position:absolute;
 
     top:75px;
-
     left:0;
 
     width:100%;
@@ -623,6 +613,8 @@ footer small{
     display:none;
 
     flex-direction:column;
+
+    gap:0;
 
     padding:30px 8%;
 
@@ -634,13 +626,11 @@ footer small{
   }
 
   nav a{
-    padding:10px 0;
+    padding:12px 0;
   }
 
 
-  /* =========================
-     HERO
-  ========================= */
+  /* HERO */
 
   .hero{
     grid-template-columns:1fr;
@@ -650,14 +640,13 @@ footer small{
     gap:20px;
   }
 
+
   h1{
     font-size:58px;
   }
 
 
-  /* =========================
-     HERO LARGE LOGO
-  ========================= */
+  /* HERO LOGO */
 
   .hero-card{
     height:360px;
@@ -676,12 +665,11 @@ footer small{
   }
 
 
-  /* =========================
-     STATS
-  ========================= */
+  /* STATS */
 
   .stats{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .stats div{
@@ -699,11 +687,24 @@ footer small{
 }
 
 
-/* =========================
+/* =========================================================
    SMALL MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:500px){
+
+  /* HEADER LOGO — SMALL */
+
+  .nav > .logo{
+    width:34px;
+    height:34px;
+  }
+
+  .nav > .logo img{
+    width:34px;
+    height:34px;
+  }
+
 
   h1{
     font-size:58px;
@@ -712,6 +713,7 @@ footer small{
   .lead{
     font-size:14px;
   }
+
 
   .actions{
     flex-direction:column;
@@ -724,23 +726,7 @@ footer small{
   }
 
 
-  /* HEADER LOGO */
-
-  .header-logo{
-    width:42px;
-    height:42px;
-  }
-
-  .header-logo img{
-    width:42px !important;
-    height:42px !important;
-
-    max-width:42px !important;
-    max-height:42px !important;
-  }
-
-
-  /* HERO */
+  /* HERO LOGO */
 
   .hero-card{
     height:340px;
