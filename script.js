@@ -1,114 +1,326 @@
-// MOBILE MENU
+/* =========================================================
+   DAMITH PHOTO
+   MAIN JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 const menu = document.querySelector(".menu");
-const nav = document.querySelector("nav");
+const nav = document.querySelector("#main-navigation");
 
-if(menu){
 
-menu.addEventListener("click", () => {
+if (menu && nav) {
 
-nav.classList.toggle("open");
 
-});
+  menu.addEventListener("click", function () {
+
+
+    const isOpen =
+      nav.classList.toggle("open");
+
+
+    menu.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+
+    menu.setAttribute(
+      "aria-label",
+      isOpen
+        ? "Close navigation menu"
+        : "Open navigation menu"
+    );
+
+
+  });
+
+
+}
+
+
+/* =========================================================
+   CLOSE MENU WHEN LINK IS CLICKED
+========================================================= */
+
+if (nav) {
+
+
+  const navLinks =
+    nav.querySelectorAll("a");
+
+
+  navLinks.forEach(function(link) {
+
+
+    link.addEventListener(
+      "click",
+      function () {
+
+
+        nav.classList.remove("open");
+
+
+        if (menu) {
+
+          menu.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+
+          menu.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+          );
+
+        }
+
+
+      }
+    );
+
+
+  });
+
 
 }
 
 
-// CLOSE MOBILE MENU WHEN LINK IS CLICKED
+/* =========================================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+========================================================= */
 
-document.querySelectorAll("nav a").forEach(link => {
-
-link.addEventListener("click", () => {
-
-nav.classList.remove("open");
-
-});
-
-});
+document.addEventListener(
+  "click",
+  function(event) {
 
 
-// SCROLL REVEAL ANIMATION
+    if (!nav || !menu) {
+      return;
+    }
 
-const reveals = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(
+    const clickedInsideNav =
+      nav.contains(event.target);
 
-(entries) => {
 
-entries.forEach(entry => {
+    const clickedMenu =
+      menu.contains(event.target);
 
-if(entry.isIntersecting){
 
-entry.target.classList.add("visible");
+    if (
+      !clickedInsideNav &&
+      !clickedMenu
+    ) {
 
-}
 
-});
+      nav.classList.remove("open");
 
-},
 
-{
-threshold:0.15
-}
+      menu.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
+
+      menu.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+      );
+
+
+    }
+
+
+  }
 );
 
-reveals.forEach(element => {
 
-observer.observe(element);
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
-});
-
-
-// GOLD CURSOR GLOW
-
-const glow = document.createElement("div");
-
-glow.style.position = "fixed";
-glow.style.width = "180px";
-glow.style.height = "180px";
-glow.style.borderRadius = "50%";
-glow.style.pointerEvents = "none";
-glow.style.background =
-"radial-gradient(circle, rgba(212,175,55,.12), transparent 70%)";
-glow.style.transform = "translate(-50%,-50%)";
-glow.style.zIndex = "9999";
-glow.style.opacity = "0";
-
-document.body.appendChild(glow);
-
-document.addEventListener("mousemove", (e) => {
-
-glow.style.left = e.clientX + "px";
-glow.style.top = e.clientY + "px";
-glow.style.opacity = "1";
-
-});
+const reveals =
+  document.querySelectorAll(".reveal");
 
 
-// BUTTON SHINE EFFECT
-
-document.querySelectorAll(".btn.gold").forEach(button => {
-
-button.addEventListener("mouseenter", () => {
-
-button.style.transform = "translateY(-4px)";
-
-});
-
-button.addEventListener("mouseleave", () => {
-
-button.style.transform = "";
-
-});
-
-});
+if (
+  "IntersectionObserver"
+  in window
+) {
 
 
-// PAGE LOAD
+  const observer =
+    new IntersectionObserver(
 
-window.addEventListener("load", () => {
+      function(entries) {
 
-document.body.classList.add("loaded");
 
-});
+        entries.forEach(
+          function(entry) {
+
+
+            if (
+              entry.isIntersecting
+            ) {
+
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+
+              observer.unobserve(
+                entry.target
+              );
+
+
+            }
+
+
+          }
+        );
+
+
+      },
+
+      {
+        threshold:0.12
+      }
+
+    );
+
+
+  reveals.forEach(
+    function(element) {
+
+      observer.observe(element);
+
+    }
+  );
+
+
+} else {
+
+
+  /* Fallback */
+
+  reveals.forEach(
+    function(element) {
+
+      element.classList.add(
+        "visible"
+      );
+
+    }
+  );
+
+
+}
+
+
+/* =========================================================
+   GOLD CURSOR GLOW
+   DESKTOP ONLY
+========================================================= */
+
+const finePointer =
+  window.matchMedia(
+    "(pointer:fine)"
+  );
+
+
+if (finePointer.matches) {
+
+
+  const glow =
+    document.createElement("div");
+
+
+  glow.className =
+    "cursor-glow";
+
+
+  document.body.appendChild(
+    glow
+  );
+
+
+  document.addEventListener(
+    "mousemove",
+    function(event) {
+
+
+      glow.style.left =
+        event.clientX + "px";
+
+
+      glow.style.top =
+        event.clientY + "px";
+
+
+    }
+  );
+
+
+}
+
+
+/* =========================================================
+   BUTTON EFFECT
+========================================================= */
+
+const goldButtons =
+  document.querySelectorAll(
+    ".btn.gold"
+  );
+
+
+goldButtons.forEach(
+  function(button) {
+
+
+    button.addEventListener(
+      "mouseenter",
+      function() {
+
+        button.style.transform =
+          "translateY(-4px)";
+
+      }
+    );
+
+
+    button.addEventListener(
+      "mouseleave",
+      function() {
+
+        button.style.transform =
+          "";
+
+      }
+    );
+
+
+  }
+);
+
+
+/* =========================================================
+   PAGE LOAD
+========================================================= */
+
+window.addEventListener(
+  "load",
+  function() {
+
+    document.body.classList.add(
+      "loaded"
+    );
+
+  }
+);
