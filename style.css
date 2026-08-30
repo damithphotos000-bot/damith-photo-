@@ -629,3 +629,24 @@ footer small{
     height:auto !important;
   }
 }
+/* =========================
+   HEADER LOGO ONLY - SMALLER
+========================= */
+
+.nav > .logo img{
+  width:110px !important;
+  height:auto !important;
+  transform:scale(0.55) !important;
+  transform-origin:center center;
+}
+
+/* MOBILE HEADER LOGO ONLY */
+@media(max-width:800px){
+
+  .nav > .logo img{
+    width:90px !important;
+    height:auto !important;
+    transform:scale(0.55) !important;
+  }
+
+}
