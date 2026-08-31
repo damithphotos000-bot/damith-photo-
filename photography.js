@@ -8,45 +8,53 @@
    MOBILE MENU
 ========================================================= */
 
-const photoMenu =
-  document.querySelector(".photo-menu");
+document.addEventListener("DOMContentLoaded", () => {
 
-const photoNavigation =
-  document.querySelector(".photo-navigation");
+  const photoMenu =
+    document.querySelector(".photo-menu");
 
-
-if(photoMenu && photoNavigation){
-
-  photoMenu.addEventListener("click", () => {
-
-    const isOpen =
-      photoNavigation.classList.toggle("open");
-
-    photoMenu.classList.toggle(
-      "open",
-      isOpen
-    );
-
-    photoMenu.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
-
-    photoMenu.setAttribute(
-      "aria-label",
-      isOpen
-        ? "Close navigation menu"
-        : "Open navigation menu"
-    );
-
-  });
+  const photoNavigation =
+    document.querySelector(".photo-navigation");
 
 
-  /* CLOSE MENU AFTER CLICK */
+  if (photoMenu && photoNavigation) {
 
-  photoNavigation
-    .querySelectorAll("a")
-    .forEach(link => {
+    /* OPEN / CLOSE MENU */
+
+    photoMenu.addEventListener("click", (event) => {
+
+      event.stopPropagation();
+
+      const isOpen =
+        photoNavigation.classList.toggle("open");
+
+      photoMenu.classList.toggle(
+        "open",
+        isOpen
+      );
+
+      photoMenu.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      photoMenu.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close navigation menu"
+          : "Open navigation menu"
+      );
+
+    });
+
+
+    /* CLOSE MENU AFTER CLICKING A LINK */
+
+    const navigationLinks =
+      photoNavigation.querySelectorAll("a");
+
+
+    navigationLinks.forEach(link => {
 
       link.addEventListener("click", () => {
 
@@ -68,148 +76,133 @@ if(photoMenu && photoNavigation){
 
     });
 
-}
+
+    /* CLOSE WHEN CLICKING OUTSIDE */
+
+    document.addEventListener("click", (event) => {
+
+      const clickedInsideMenu =
+        photoMenu.contains(event.target);
+
+      const clickedInsideNavigation =
+        photoNavigation.contains(event.target);
 
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+      if (
+        !clickedInsideMenu &&
+        !clickedInsideNavigation
+      ) {
 
-const photoReveals =
-  document.querySelectorAll(".reveal");
+        photoNavigation.classList.remove("open");
 
+        photoMenu.classList.remove("open");
 
-if("IntersectionObserver" in window){
+        photoMenu.setAttribute(
+          "aria-expanded",
+          "false"
+        );
 
-  const photoObserver =
-    new IntersectionObserver(
-      (entries, observer) => {
+        photoMenu.setAttribute(
+          "aria-label",
+          "Open navigation menu"
+        );
 
-        entries.forEach(entry => {
-
-          if(entry.isIntersecting){
-
-            entry.target.classList.add(
-              "visible"
-            );
-
-            observer.unobserve(
-              entry.target
-            );
-
-          }
-
-        });
-
-      },
-      {
-        threshold:0.12
       }
-    );
+
+    });
 
 
-  photoReveals.forEach(element => {
+    /* ESC KEY */
 
-    photoObserver.observe(element);
+    document.addEventListener("keydown", (event) => {
 
-  });
-
-}else{
-
-  photoReveals.forEach(element => {
-
-    element.classList.add("visible");
-
-  });
-
-}
+      if (event.key !== "Escape") {
+        return;
+      }
 
 
-/* =========================================================
-   CLOSE MENU WHEN CLICKING OUTSIDE
-========================================================= */
+      photoNavigation.classList.remove("open");
 
-document.addEventListener("click", event => {
+      photoMenu.classList.remove("open");
 
-  if(
-    !photoMenu ||
-    !photoNavigation
-  ){
-    return;
-  }
+      photoMenu.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
+      photoMenu.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+      );
 
-  const clickedInsideMenu =
-    photoMenu.contains(event.target);
-
-
-  const clickedInsideNavigation =
-    photoNavigation.contains(event.target);
-
-
-  if(
-    !clickedInsideMenu &&
-    !clickedInsideNavigation
-  ){
-
-    photoNavigation.classList.remove("open");
-
-    photoMenu.classList.remove("open");
-
-    photoMenu.setAttribute(
-      "aria-expanded",
-      "false"
-    );
-
-    photoMenu.setAttribute(
-      "aria-label",
-      "Open navigation menu"
-    );
+    });
 
   }
 
-});
+
+  /* =======================================================
+     SCROLL REVEAL
+  ======================================================= */
+
+  const photoReveals =
+    document.querySelectorAll(".reveal");
 
 
-/* =========================================================
-   ESC KEY
-========================================================= */
+  if (
+    photoReveals.length &&
+    "IntersectionObserver" in window
+  ) {
 
-document.addEventListener("keydown", event => {
+    const photoObserver =
+      new IntersectionObserver(
+        (entries, observer) => {
 
-  if(event.key !== "Escape"){
-    return;
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    photoReveals.forEach(element => {
+
+      photoObserver.observe(element);
+
+    });
+
+  } else {
+
+    photoReveals.forEach(element => {
+
+      element.classList.add("visible");
+
+    });
+
   }
 
 
-  if(!photoMenu || !photoNavigation){
-    return;
-  }
+  /* =======================================================
+     PAGE READY
+  ======================================================= */
 
-
-  photoNavigation.classList.remove("open");
-
-  photoMenu.classList.remove("open");
-
-  photoMenu.setAttribute(
-    "aria-expanded",
-    "false"
+  document.body.classList.add(
+    "page-ready"
   );
-
-  photoMenu.setAttribute(
-    "aria-label",
-    "Open navigation menu"
-  );
-
-});
-
-
-/* =========================================================
-   PAGE READY
-========================================================= */
-
-window.addEventListener("load", () => {
-
-  document.body.classList.add("page-ready");
 
 });
