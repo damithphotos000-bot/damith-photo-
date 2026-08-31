@@ -1,6 +1,7 @@
 /* =========================================================
    DAMITH PHOTO
-   SERVICES PAGE
+   SERVICES PAGE — FINAL
+   BLACK + GOLD LUXURY CINEMATIC DESIGN
 ========================================================= */
 
 
@@ -44,7 +45,10 @@ a{
 }
 
 
-button{
+button,
+input,
+select,
+textarea{
   font:inherit;
 }
 
@@ -191,6 +195,8 @@ button{
   gap:5px;
 
   cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
 }
 
 
@@ -249,6 +255,32 @@ button{
     100px 8% 120px;
 
   position:relative;
+
+  overflow:hidden;
+}
+
+
+.service-hero::before{
+  content:"";
+
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  top:-180px;
+  left:-180px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.07),
+      transparent 70%
+    );
+
+  pointer-events:none;
 }
 
 
@@ -313,6 +345,75 @@ button{
   line-height:1.9;
 
   letter-spacing:.2px;
+
+  margin-bottom:35px;
+}
+
+
+/* =========================================================
+   HERO BOOK A SESSION BUTTON
+========================================================= */
+
+.service-hero-book{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  gap:18px;
+
+  min-height:56px;
+
+  padding:
+    17px 28px;
+
+  background:#d4af37;
+
+  color:#080808;
+
+  font-size:10px;
+
+  font-weight:600;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  border:
+    1px solid #d4af37;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    background .3s ease,
+    color .3s ease;
+}
+
+
+.service-hero-book span{
+  font-size:17px;
+
+  line-height:1;
+
+  transition:
+    transform .3s ease;
+}
+
+
+.service-hero-book:hover{
+  transform:translateY(-4px);
+
+  background:transparent;
+
+  color:#d4af37;
+
+  box-shadow:
+    0 15px 40px rgba(212,175,55,.15);
+}
+
+
+.service-hero-book:hover span{
+  transform:translateX(5px);
 }
 
 
@@ -488,6 +589,8 @@ button{
 
   border-top:
     1px solid rgba(212,175,55,.16);
+
+  position:relative;
 }
 
 
@@ -521,17 +624,28 @@ button{
 
 /* =========================================================
    SERVICES LIST
+   SIX SERVICES — ALWAYS VERTICAL
 ========================================================= */
 
 .services-list{
   width:100%;
+
+  display:flex;
+
+  flex-direction:column;
 
   border-top:
     1px solid rgba(212,175,55,.18);
 }
 
 
+/* =========================================================
+   SERVICE ITEM
+========================================================= */
+
 .service-item{
+  width:100%;
+
   display:grid;
 
   grid-template-columns:
@@ -546,9 +660,41 @@ button{
   border-bottom:
     1px solid rgba(212,175,55,.18);
 
+  position:relative;
+
   transition:
     padding .4s ease,
     background .4s ease;
+}
+
+
+.service-item::before{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:0;
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(212,175,55,.045),
+      transparent
+    );
+
+  transition:
+    width .45s ease;
+
+  pointer-events:none;
+}
+
+
+.service-item:hover::before{
+  width:100%;
 }
 
 
@@ -565,11 +711,19 @@ button{
   font-size:24px;
 
   line-height:1.2;
+
+  position:relative;
+
+  z-index:2;
 }
 
 
 .service-item-content{
   max-width:850px;
+
+  position:relative;
+
+  z-index:2;
 }
 
 
@@ -606,16 +760,26 @@ button{
 
   line-height:1.9;
 
-  margin-bottom:28px;
+  margin-bottom:30px;
 }
 
+
+/* =========================================================
+   SERVICE CHOOSE BUTTON
+========================================================= */
 
 .service-link{
   display:inline-flex;
 
   align-items:center;
+  justify-content:center;
 
   gap:12px;
+
+  min-height:46px;
+
+  padding:
+    12px 20px;
 
   color:#d4af37;
 
@@ -623,30 +787,49 @@ button{
 
   font-weight:600;
 
-  letter-spacing:3px;
+  letter-spacing:2.5px;
 
   text-transform:uppercase;
 
-  border-bottom:
+  border:
     1px solid rgba(212,175,55,.45);
 
-  padding-bottom:7px;
+  background:transparent;
 
   transition:
+    color .3s ease,
+    background .3s ease,
+    border-color .3s ease,
     gap .3s ease,
-    border-color .3s ease;
+    transform .3s ease;
 }
 
 
 .service-link span{
   font-size:16px;
+
+  line-height:1;
+
+  transition:
+    transform .3s ease;
 }
 
 
 .service-link:hover{
-  gap:20px;
+  gap:17px;
+
+  color:#080808;
+
+  background:#d4af37;
 
   border-color:#d4af37;
+
+  transform:translateY(-2px);
+}
+
+
+.service-link:hover span{
+  transform:translateX(4px);
 }
 
 
@@ -715,6 +898,14 @@ button{
   padding:45px;
 
   background:#080808;
+
+  transition:
+    background .3s ease;
+}
+
+
+.process-card:hover{
+  background:#0d0d0d;
 }
 
 
@@ -830,14 +1021,23 @@ button{
 
   text-transform:uppercase;
 
+  border:
+    1px solid #d4af37;
+
   transition:
     transform .3s ease,
-    box-shadow .3s ease;
+    box-shadow .3s ease,
+    background .3s ease,
+    color .3s ease;
 }
 
 
 .service-btn:hover{
   transform:translateY(-4px);
+
+  background:transparent;
+
+  color:#d4af37;
 
   box-shadow:
     0 12px 35px rgba(212,175,55,.25);
@@ -917,13 +1117,8 @@ button{
 
 
 /* =========================================================
-   REVEAL
+   REVEAL ANIMATION
 ========================================================= */
-
-/*
-   IMPORTANT:
-   Content is visible even if JavaScript fails.
-*/
 
 .reveal{
   opacity:1;
@@ -948,6 +1143,64 @@ button{
   opacity:1;
 
   transform:translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1000px){
+
+  .service-navigation{
+    gap:22px;
+  }
+
+
+  .service-navigation a{
+    font-size:10px;
+
+    letter-spacing:1.5px;
+  }
+
+
+  .service-hero{
+    gap:35px;
+
+    padding:
+      85px 7%
+      100px;
+  }
+
+
+  .service-hero h1{
+    font-size:
+      clamp(65px,9vw,100px);
+  }
+
+
+  .service-hero-mark{
+    min-height:400px;
+  }
+
+
+  .circle-one{
+    width:280px;
+    height:280px;
+  }
+
+
+  .circle-two{
+    width:210px;
+    height:210px;
+  }
+
+
+  .service-mark-text{
+    width:135px;
+    height:135px;
+  }
+
 }
 
 
@@ -1030,18 +1283,20 @@ button{
   }
 
 
-  /* HERO */
+  /* =====================================================
+     MOBILE HERO
+  ====================================================== */
 
   .service-hero{
     min-height:auto;
 
     grid-template-columns:1fr;
 
-    gap:40px;
+    gap:25px;
 
     padding:
       75px 7%
-      80px;
+      75px;
   }
 
 
@@ -1061,7 +1316,7 @@ button{
 
     letter-spacing:-1px;
 
-    margin-bottom:28px;
+    margin-bottom:25px;
   }
 
 
@@ -1069,34 +1324,50 @@ button{
     font-size:13px;
 
     line-height:1.85;
+
+    margin-bottom:28px;
+  }
+
+
+  .service-hero-book{
+    width:100%;
+
+    min-height:54px;
+
+    padding:
+      16px 20px;
+
+    letter-spacing:2.5px;
   }
 
 
   .service-hero-mark{
-    min-height:300px;
+    min-height:280px;
+
+    margin-top:5px;
   }
 
 
   .circle-one{
-    width:250px;
-    height:250px;
+    width:245px;
+    height:245px;
   }
 
 
   .circle-two{
-    width:195px;
-    height:195px;
+    width:190px;
+    height:190px;
   }
 
 
   .service-mark-text{
-    width:120px;
-    height:120px;
+    width:118px;
+    height:118px;
   }
 
 
   .service-mark-text span{
-    font-size:55px;
+    font-size:54px;
   }
 
 
@@ -1107,17 +1378,19 @@ button{
   }
 
 
-  /* SERVICES */
+  /* =====================================================
+     MOBILE SERVICES
+  ====================================================== */
 
   .services-section{
     padding:
-      90px 7%
+      85px 7%
       100px;
   }
 
 
   .services-heading{
-    margin-bottom:60px;
+    margin-bottom:55px;
   }
 
 
@@ -1128,12 +1401,21 @@ button{
   }
 
 
+  .services-list{
+    display:flex;
+
+    flex-direction:column;
+  }
+
+
   .service-item{
+    width:100%;
+
     grid-template-columns:
-      45px
+      42px
       minmax(0,1fr);
 
-    gap:18px;
+    gap:16px;
 
     padding:
       45px 0;
@@ -1147,6 +1429,11 @@ button{
 
   .service-number{
     font-size:19px;
+  }
+
+
+  .service-item-content{
+    min-width:0;
   }
 
 
@@ -1168,7 +1455,23 @@ button{
   }
 
 
-  /* PROCESS */
+  .service-link{
+    width:auto;
+
+    min-height:45px;
+
+    padding:
+      12px 15px;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+  }
+
+
+  /* =====================================================
+     MOBILE PROCESS
+  ====================================================== */
 
   .service-process{
     padding:
@@ -1207,7 +1510,9 @@ button{
   }
 
 
-  /* CTA */
+  /* =====================================================
+     MOBILE CTA
+  ====================================================== */
 
   .service-cta{
     padding:
@@ -1222,7 +1527,16 @@ button{
   }
 
 
-  /* FOOTER */
+  .service-btn{
+    width:100%;
+
+    min-height:54px;
+  }
+
+
+  /* =====================================================
+     MOBILE FOOTER
+  ====================================================== */
 
   .service-footer{
     padding:
@@ -1248,7 +1562,7 @@ button{
   .service-hero{
     padding:
       60px 7%
-      70px;
+      65px;
   }
 
 
@@ -1258,30 +1572,30 @@ button{
 
 
   .service-hero-mark{
-    min-height:270px;
+    min-height:255px;
   }
 
 
   .circle-one{
-    width:225px;
-    height:225px;
+    width:220px;
+    height:220px;
   }
 
 
   .circle-two{
-    width:175px;
-    height:175px;
+    width:170px;
+    height:170px;
   }
 
 
   .service-mark-text{
-    width:105px;
-    height:105px;
+    width:103px;
+    height:103px;
   }
 
 
   .service-mark-text span{
-    font-size:48px;
+    font-size:47px;
   }
 
 
@@ -1292,15 +1606,40 @@ button{
 
   .service-item{
     grid-template-columns:
-      35px
+      32px
       minmax(0,1fr);
 
-    gap:12px;
+    gap:10px;
+
+    padding:
+      40px 0;
+  }
+
+
+  .service-number{
+    font-size:17px;
   }
 
 
   .service-item-content h3{
-    font-size:42px;
+    font-size:40px;
+  }
+
+
+  .service-item-content p{
+    font-size:12px;
+  }
+
+
+  .service-link{
+    width:100%;
+
+    font-size:8px;
+
+    letter-spacing:1.6px;
+
+    padding:
+      12px 10px;
   }
 
 
@@ -1311,6 +1650,94 @@ button{
 
   .service-cta h2{
     font-size:50px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media(max-width:360px){
+
+  .service-hero h1{
+    font-size:48px;
+  }
+
+
+  .services-heading h2{
+    font-size:46px;
+  }
+
+
+  .service-item-content h3{
+    font-size:36px;
+  }
+
+
+  .service-link{
+    font-size:7.5px;
+
+    letter-spacing:1.2px;
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media(hover:none){
+
+  .service-item:hover{
+    padding-left:0;
+  }
+
+
+  .service-item:hover h3{
+    color:#f5f0e8;
+  }
+
+
+  .service-item:hover::before{
+    width:0;
+  }
+
+
+  .service-link:hover{
+    gap:12px;
+
+    color:#d4af37;
+
+    background:transparent;
+
+    border-color:
+      rgba(212,175,55,.45);
+
+    transform:none;
+  }
+
+
+  .service-link:hover span{
+    transform:none;
+  }
+
+
+  .service-hero-book:hover{
+    transform:none;
+
+    background:#d4af37;
+
+    color:#080808;
+
+    box-shadow:none;
+  }
+
+
+  .service-hero-book:hover span{
+    transform:none;
   }
 
 }
