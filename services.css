@@ -44,6 +44,11 @@ a{
 }
 
 
+button{
+  font:inherit;
+}
+
+
 /* =========================================================
    HEADER
 ========================================================= */
@@ -62,10 +67,10 @@ a{
   top:0;
   z-index:1000;
 
-  background:rgba(8,8,8,.95);
+  background:rgba(8,8,8,.96);
 
   border-bottom:
-    1px solid rgba(212,175,55,.18);
+    1px solid rgba(212,175,55,.20);
 
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
@@ -77,22 +82,22 @@ a{
 ========================================================= */
 
 .service-logo{
-  width:48px;
-  height:48px;
+  width:52px;
+  height:52px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  flex-shrink:0;
-
   overflow:hidden;
+
+  flex-shrink:0;
 }
 
 
 .service-logo img{
-  width:48px !important;
-  height:48px !important;
+  width:52px !important;
+  height:52px !important;
 
   max-width:none;
 
@@ -106,22 +111,25 @@ a{
 
 .service-navigation{
   display:flex;
+
   align-items:center;
 
-  gap:28px;
+  gap:30px;
 }
 
 
 .service-navigation a{
   position:relative;
 
-  font-size:12px;
+  color:#8f8f8f;
+
+  font-size:11px;
+
+  font-weight:500;
 
   letter-spacing:2px;
 
   text-transform:uppercase;
-
-  color:#999;
 
   transition:
     color .3s ease;
@@ -134,7 +142,7 @@ a{
   position:absolute;
 
   left:0;
-  bottom:-8px;
+  bottom:-9px;
 
   width:0;
   height:1px;
@@ -146,7 +154,8 @@ a{
 }
 
 
-.service-navigation a:hover{
+.service-navigation a:hover,
+.service-navigation a.active{
   color:#d4af37;
 }
 
@@ -157,11 +166,6 @@ a{
 }
 
 
-.service-navigation a.active{
-  color:#d4af37;
-}
-
-
 /* =========================================================
    MOBILE MENU
 ========================================================= */
@@ -169,13 +173,11 @@ a{
 .service-menu{
   display:none;
 
-  width:44px;
-  height:44px;
-
-  padding:0;
+  width:48px;
+  height:48px;
 
   border:
-    1px solid rgba(212,175,55,.45);
+    1px solid rgba(212,175,55,.65);
 
   border-radius:50%;
 
@@ -193,10 +195,10 @@ a{
 
 
 .service-menu span{
-  display:block;
-
-  width:18px;
+  width:20px;
   height:1px;
+
+  display:block;
 
   background:#d4af37;
 
@@ -236,15 +238,17 @@ a{
   display:grid;
 
   grid-template-columns:
-    minmax(0,1.1fr)
-    minmax(0,.9fr);
+    minmax(0,1.15fr)
+    minmax(300px,.85fr);
 
   align-items:center;
 
-  gap:50px;
+  gap:60px;
 
   padding:
-    80px 8%;
+    100px 8% 120px;
+
+  position:relative;
 }
 
 
@@ -262,11 +266,15 @@ a{
 
   font-size:11px;
 
-  letter-spacing:4px;
+  font-weight:500;
+
+  letter-spacing:5px;
 
   line-height:1.6;
 
-  margin-bottom:25px;
+  margin-bottom:30px;
+
+  text-transform:uppercase;
 }
 
 
@@ -278,9 +286,11 @@ a{
 
   font-weight:600;
 
-  line-height:.88;
+  line-height:.86;
 
-  margin-bottom:35px;
+  letter-spacing:-2px;
+
+  margin-bottom:40px;
 }
 
 
@@ -296,73 +306,22 @@ a{
 .service-lead{
   max-width:620px;
 
-  color:#999;
+  color:#929292;
 
-  font-size:16px;
+  font-size:15px;
 
   line-height:1.9;
 
-  margin-bottom:35px;
+  letter-spacing:.2px;
 }
 
 
 /* =========================================================
-   BUTTON
-========================================================= */
-
-.service-hero-actions{
-  display:flex;
-
-  align-items:center;
-}
-
-
-.service-btn{
-  display:inline-flex;
-
-  align-items:center;
-  justify-content:center;
-
-  min-height:52px;
-
-  padding:
-    16px 30px;
-
-  background:#d4af37;
-
-  color:#080808;
-
-  font-size:11px;
-
-  font-weight:600;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-
-  box-shadow:
-    0 0 25px rgba(212,175,55,.16);
-
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease;
-}
-
-
-.service-btn:hover{
-  transform:translateY(-4px);
-
-  box-shadow:
-    0 12px 35px rgba(212,175,55,.28);
-}
-
-
-/* =========================================================
-   HERO MARK
+   HERO DECORATION
 ========================================================= */
 
 .service-hero-mark{
-  min-height:520px;
+  min-height:500px;
 
   display:flex;
 
@@ -384,34 +343,57 @@ a{
 
 
 .circle-one{
-  width:350px;
-  height:350px;
+  width:330px;
+  height:330px;
 
   animation:
-    serviceRotate 15s linear infinite;
+    serviceRotate 18s linear infinite;
 }
 
 
 .circle-two{
-  width:270px;
-  height:270px;
+  width:250px;
+  height:250px;
 
   border-color:
-    rgba(212,175,55,.18);
+    rgba(212,175,55,.22);
 
   animation:
-    serviceRotateReverse 12s linear infinite;
+    serviceRotateReverse 14s linear infinite;
+}
+
+
+.service-circle::before{
+  content:"";
+
+  position:absolute;
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:#d4af37;
+
+  top:-4px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  box-shadow:
+    0 0 20px rgba(212,175,55,.8);
+}
+
+
+.circle-two::before{
+  top:auto;
+  bottom:-4px;
 }
 
 
 .service-mark-text{
-  width:210px;
-  height:210px;
-
-  border:
-    1px solid #d4af37;
-
-  border-radius:50%;
+  width:150px;
+  height:150px;
 
   display:flex;
 
@@ -420,36 +402,52 @@ a{
 
   flex-direction:column;
 
-  text-align:center;
+  border:
+    1px solid rgba(212,175,55,.65);
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,.08),
+      transparent 70%
+    );
+
+  position:relative;
+
+  z-index:3;
 
   box-shadow:
-    0 0 40px rgba(212,175,55,.08);
+    0 0 45px rgba(212,175,55,.08);
 }
 
 
 .service-mark-text span{
   font-family:'Cormorant Garamond',serif;
 
-  font-size:100px;
+  color:#d4af37;
+
+  font-size:68px;
 
   line-height:.7;
 
-  color:#d4af37;
-
-  font-style:italic;
+  font-weight:500;
 }
 
 
 .service-mark-text small{
-  margin-top:25px;
+  color:#888;
 
-  color:#999;
+  font-size:7px;
 
-  font-size:8px;
+  letter-spacing:3px;
 
   line-height:1.6;
 
-  letter-spacing:4px;
+  text-align:center;
+
+  margin-top:13px;
 }
 
 
@@ -485,12 +483,16 @@ a{
 
 .services-section{
   padding:
-    130px 8% 0;
+    120px 8%
+    140px;
+
+  border-top:
+    1px solid rgba(212,175,55,.16);
 }
 
 
 .services-heading{
-  margin-bottom:70px;
+  margin-bottom:90px;
 }
 
 
@@ -498,11 +500,13 @@ a{
   font-family:'Cormorant Garamond',serif;
 
   font-size:
-    clamp(60px,7vw,105px);
+    clamp(60px,8vw,110px);
 
   font-weight:600;
 
-  line-height:.9;
+  line-height:.88;
+
+  letter-spacing:-2px;
 }
 
 
@@ -516,10 +520,12 @@ a{
 
 
 /* =========================================================
-   SERVICE LIST
+   SERVICES LIST
 ========================================================= */
 
 .services-list{
+  width:100%;
+
   border-top:
     1px solid rgba(212,175,55,.18);
 }
@@ -535,39 +541,30 @@ a{
   gap:40px;
 
   padding:
-    60px 0;
+    65px 0;
 
   border-bottom:
     1px solid rgba(212,175,55,.18);
 
-  position:relative;
-
   transition:
-    padding-left .4s ease,
+    padding .4s ease,
     background .4s ease;
 }
 
 
 .service-item:hover{
   padding-left:25px;
-
-  background:
-    radial-gradient(
-      circle at 20% 50%,
-      rgba(212,175,55,.055),
-      transparent 55%
-    );
 }
 
 
 .service-number{
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:25px;
-
   color:#d4af37;
 
-  padding-top:8px;
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:24px;
+
+  line-height:1.2;
 }
 
 
@@ -579,6 +576,8 @@ a{
 .service-item-content h3{
   font-family:'Cormorant Garamond',serif;
 
+  color:#f5f0e8;
+
   font-size:
     clamp(48px,5vw,75px);
 
@@ -586,7 +585,7 @@ a{
 
   line-height:.95;
 
-  margin-bottom:22px;
+  margin-bottom:25px;
 
   transition:
     color .3s ease;
@@ -601,7 +600,7 @@ a{
 .service-item-content p{
   max-width:650px;
 
-  color:#888;
+  color:#858585;
 
   font-size:14px;
 
@@ -616,38 +615,38 @@ a{
 
   align-items:center;
 
-  gap:10px;
+  gap:12px;
 
   color:#d4af37;
 
-  font-size:11px;
+  font-size:10px;
 
   font-weight:600;
 
-  letter-spacing:2px;
+  letter-spacing:3px;
 
   text-transform:uppercase;
 
   border-bottom:
-    1px solid rgba(212,175,55,.5);
+    1px solid rgba(212,175,55,.45);
 
-  padding-bottom:6px;
+  padding-bottom:7px;
 
   transition:
     gap .3s ease,
-    color .3s ease;
+    border-color .3s ease;
 }
 
 
 .service-link span{
-  font-size:17px;
-
-  line-height:10px;
+  font-size:16px;
 }
 
 
 .service-link:hover{
-  gap:17px;
+  gap:20px;
+
+  border-color:#d4af37;
 }
 
 
@@ -657,13 +656,21 @@ a{
 
 .service-process{
   padding:
-    150px 8%;
+    140px 8%;
 
-  text-align:center;
+  border-top:
+    1px solid rgba(212,175,55,.16);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(212,175,55,.055),
+      transparent 58%
+    );
 }
 
 
-.service-process h2{
+.service-process > h2{
   font-family:'Cormorant Garamond',serif;
 
   font-size:
@@ -677,7 +684,7 @@ a{
 }
 
 
-.service-process h2 em{
+.service-process > h2 em{
   color:#d4af37;
 
   font-style:italic;
@@ -692,40 +699,35 @@ a{
   grid-template-columns:
     repeat(3,minmax(0,1fr));
 
-  border-top:
-    1px solid rgba(212,175,55,.18);
+  gap:1px;
 
-  border-bottom:
-    1px solid rgba(212,175,55,.18);
+  border:
+    1px solid rgba(212,175,55,.16);
+
+  background:
+    rgba(212,175,55,.16);
 }
 
 
 .process-card{
-  padding:
-    55px 35px;
+  min-height:280px;
 
-  min-height:240px;
+  padding:45px;
 
-  border-right:
-    1px solid rgba(212,175,55,.18);
-}
-
-
-.process-card:last-child{
-  border-right:0;
+  background:#080808;
 }
 
 
 .process-card span{
   display:block;
 
+  color:#d4af37;
+
   font-family:'Cormorant Garamond',serif;
 
   font-size:22px;
 
-  color:#d4af37;
-
-  margin-bottom:25px;
+  margin-bottom:45px;
 }
 
 
@@ -745,7 +747,9 @@ a{
 
   font-size:13px;
 
-  line-height:1.8;
+  line-height:1.9;
+
+  max-width:280px;
 }
 
 
@@ -760,13 +764,13 @@ a{
   text-align:center;
 
   border-top:
-    1px solid rgba(212,175,55,.18);
+    1px solid rgba(212,175,55,.16);
 
   background:
     radial-gradient(
       circle at center,
-      rgba(212,175,55,.07),
-      transparent 55%
+      rgba(212,175,55,.075),
+      transparent 58%
     );
 }
 
@@ -775,11 +779,11 @@ a{
   font-family:'Cormorant Garamond',serif;
 
   font-size:
-    clamp(60px,7vw,105px);
+    clamp(60px,8vw,110px);
 
   font-weight:600;
 
-  line-height:.9;
+  line-height:.88;
 
   margin-bottom:30px;
 }
@@ -803,13 +807,50 @@ a{
 }
 
 
+.service-btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-height:52px;
+
+  padding:
+    16px 30px;
+
+  background:#d4af37;
+
+  color:#080808;
+
+  font-size:10px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.service-btn:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 12px 35px rgba(212,175,55,.25);
+}
+
+
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .service-footer{
   padding:
-    70px 8%;
+    80px 8%;
 
   text-align:center;
 
@@ -821,9 +862,11 @@ a{
 .service-footer-logo{
   font-family:'Cormorant Garamond',serif;
 
-  font-size:30px;
+  color:#f5f0e8;
 
-  letter-spacing:3px;
+  font-size:32px;
+
+  letter-spacing:5px;
 
   margin-bottom:20px;
 }
@@ -861,15 +904,15 @@ a{
 .service-footer small{
   display:block;
 
-  color:#555;
+  color:#505050;
 
   font-size:10px;
 
-  letter-spacing:1px;
+  letter-spacing:1.5px;
 
   line-height:1.6;
 
-  margin-top:30px;
+  margin-top:35px;
 }
 
 
@@ -877,7 +920,19 @@ a{
    REVEAL
 ========================================================= */
 
+/*
+   IMPORTANT:
+   Content is visible even if JavaScript fails.
+*/
+
 .reveal{
+  opacity:1;
+
+  transform:none;
+}
+
+
+.js-ready .reveal{
   opacity:0;
 
   transform:
@@ -889,11 +944,10 @@ a{
 }
 
 
-.reveal.visible{
+.js-ready .reveal.visible{
   opacity:1;
 
-  transform:
-    translateY(0);
+  transform:translateY(0);
 }
 
 
@@ -912,14 +966,14 @@ a{
 
 
   .service-logo{
-    width:40px;
-    height:40px;
+    width:42px;
+    height:42px;
   }
 
 
   .service-logo img{
-    width:40px !important;
-    height:40px !important;
+    width:42px !important;
+    height:42px !important;
   }
 
 
@@ -945,15 +999,15 @@ a{
     gap:0;
 
     padding:
-      25px 8%;
+      22px 8%;
 
     background:#080808;
 
     border-bottom:
-      1px solid rgba(212,175,55,.2);
+      1px solid rgba(212,175,55,.18);
 
     box-shadow:
-      0 20px 40px rgba(0,0,0,.4);
+      0 20px 45px rgba(0,0,0,.5);
   }
 
 
@@ -965,9 +1019,9 @@ a{
   .service-navigation a{
     width:100%;
 
-    padding:14px 0;
+    padding:15px 0;
 
-    font-size:12px;
+    font-size:11px;
   }
 
 
@@ -979,230 +1033,47 @@ a{
   /* HERO */
 
   .service-hero{
-    grid-template-columns:1fr;
-
     min-height:auto;
 
-    padding:
-      65px 7%
-      50px;
-
-    gap:30px;
-  }
-
-
-  .service-hero h1{
-    font-size:58px;
-
-    line-height:.92;
-  }
-
-
-  .service-lead{
-    font-size:14px;
-
-    line-height:1.8;
-  }
-
-
-  .service-hero-mark{
-    min-height:350px;
-  }
-
-
-  .circle-one{
-    width:285px;
-    height:285px;
-  }
-
-
-  .circle-two{
-    width:225px;
-    height:225px;
-  }
-
-
-  .service-mark-text{
-    width:175px;
-    height:175px;
-  }
-
-
-  .service-mark-text span{
-    font-size:80px;
-  }
-
-
-  /* SERVICES */
-
-  .services-section{
-    padding:
-      110px 7% 0;
-  }
-
-
-  .services-heading{
-    margin-bottom:55px;
-  }
-
-
-  .services-heading h2{
-    font-size:56px;
-  }
-
-
-  .service-item{
-    grid-template-columns:
-      55px
-      minmax(0,1fr);
-
-    gap:15px;
-
-    padding:
-      48px 0;
-  }
-
-
-  .service-item:hover{
-    padding-left:0;
-  }
-
-
-  .service-number{
-    font-size:21px;
-  }
-
-
-  .service-item-content h3{
-    font-size:48px;
-  }
-
-
-  .service-item-content p{
-    font-size:13px;
-
-    line-height:1.8;
-  }
-
-
-  /* PROCESS */
-
-  .service-process{
-    padding:
-      110px 7%;
-  }
-
-
-  .service-process h2{
-    font-size:55px;
-
-    margin-bottom:55px;
-  }
-
-
-  .process-grid{
     grid-template-columns:1fr;
-  }
 
-
-  .process-card{
-    min-height:auto;
+    gap:40px;
 
     padding:
-      45px 25px;
-
-    border-right:0;
-
-    border-bottom:
-      1px solid rgba(212,175,55,.18);
-  }
-
-
-  .process-card:last-child{
-    border-bottom:0;
-  }
-
-
-  .process-card h3{
-    font-size:38px;
-  }
-
-
-  /* CTA */
-
-  .service-cta{
-    padding:
-      110px 7%;
-  }
-
-
-  .service-cta h2{
-    font-size:56px;
-  }
-
-
-  /* FOOTER */
-
-  .service-footer{
-    padding:
-      55px 7%;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media(max-width:500px){
-
-  .service-logo{
-    width:36px;
-    height:36px;
-  }
-
-
-  .service-logo img{
-    width:36px !important;
-    height:36px !important;
-  }
-
-
-  .service-hero{
-    padding:
-      50px 7%
-      35px;
+      75px 7%
+      80px;
   }
 
 
   .service-eyebrow{
     font-size:9px;
 
-    letter-spacing:3px;
+    letter-spacing:3.5px;
+
+    margin-bottom:22px;
   }
 
 
   .service-hero h1{
-    font-size:52px;
+    font-size:58px;
+
+    line-height:.9;
+
+    letter-spacing:-1px;
+
+    margin-bottom:28px;
   }
 
 
   .service-lead{
     font-size:13px;
-  }
 
-
-  .service-btn{
-    min-height:48px;
-
-    padding:
-      15px 24px;
+    line-height:1.85;
   }
 
 
   .service-hero-mark{
-    min-height:315px;
+    min-height:300px;
   }
 
 
@@ -1219,19 +1090,198 @@ a{
 
 
   .service-mark-text{
-    width:155px;
-    height:155px;
+    width:120px;
+    height:120px;
   }
 
 
   .service-mark-text span{
-    font-size:70px;
+    font-size:55px;
   }
 
 
+  .service-mark-text small{
+    font-size:6px;
+
+    letter-spacing:2px;
+  }
+
+
+  /* SERVICES */
+
   .services-section{
     padding:
-      95px 7% 0;
+      90px 7%
+      100px;
+  }
+
+
+  .services-heading{
+    margin-bottom:60px;
+  }
+
+
+  .services-heading h2{
+    font-size:54px;
+
+    line-height:.92;
+  }
+
+
+  .service-item{
+    grid-template-columns:
+      45px
+      minmax(0,1fr);
+
+    gap:18px;
+
+    padding:
+      45px 0;
+  }
+
+
+  .service-item:hover{
+    padding-left:0;
+  }
+
+
+  .service-number{
+    font-size:19px;
+  }
+
+
+  .service-item-content h3{
+    font-size:46px;
+
+    line-height:.95;
+
+    margin-bottom:20px;
+  }
+
+
+  .service-item-content p{
+    font-size:13px;
+
+    line-height:1.85;
+
+    margin-bottom:25px;
+  }
+
+
+  /* PROCESS */
+
+  .service-process{
+    padding:
+      100px 7%;
+  }
+
+
+  .service-process > h2{
+    font-size:54px;
+
+    line-height:.92;
+
+    margin-bottom:55px;
+  }
+
+
+  .process-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .process-card{
+    min-height:auto;
+
+    padding:35px;
+  }
+
+
+  .process-card span{
+    margin-bottom:30px;
+  }
+
+
+  .process-card h3{
+    font-size:38px;
+  }
+
+
+  /* CTA */
+
+  .service-cta{
+    padding:
+      100px 7%;
+  }
+
+
+  .service-cta h2{
+    font-size:55px;
+
+    line-height:.92;
+  }
+
+
+  /* FOOTER */
+
+  .service-footer{
+    padding:
+      60px 7%;
+  }
+
+
+  .service-footer-logo{
+    font-size:27px;
+
+    letter-spacing:4px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:500px){
+
+  .service-hero{
+    padding:
+      60px 7%
+      70px;
+  }
+
+
+  .service-hero h1{
+    font-size:53px;
+  }
+
+
+  .service-hero-mark{
+    min-height:270px;
+  }
+
+
+  .circle-one{
+    width:225px;
+    height:225px;
+  }
+
+
+  .circle-two{
+    width:175px;
+    height:175px;
+  }
+
+
+  .service-mark-text{
+    width:105px;
+    height:105px;
+  }
+
+
+  .service-mark-text span{
+    font-size:48px;
   }
 
 
@@ -1242,50 +1292,25 @@ a{
 
   .service-item{
     grid-template-columns:
-      42px
+      35px
       minmax(0,1fr);
 
-    gap:10px;
-
-    padding:
-      45px 0;
+    gap:12px;
   }
 
 
   .service-item-content h3{
-    font-size:43px;
+    font-size:42px;
   }
 
 
-  .service-item-content p{
-    font-size:13px;
-  }
-
-
-  .service-process{
-    padding:
-      95px 7%;
-  }
-
-
-  .service-process h2{
+  .service-process > h2{
     font-size:50px;
-  }
-
-
-  .service-cta{
-    padding:
-      95px 7%;
   }
 
 
   .service-cta h2{
     font-size:50px;
-  }
-
-
-  .service-footer-logo{
-    font-size:25px;
   }
 
 }
