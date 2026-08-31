@@ -1,0 +1,1038 @@
+/* =========================================================
+   DAMITH PHOTO
+   ABOUT PAGE
+   LUXURY BLACK + GOLD
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background: #070707;
+  color: #f4f0e8;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+  --black: #070707;
+  --black-soft: #0d0d0d;
+  --gold: #c9a45c;
+  --gold-light: #e3c783;
+  --white: #f4f0e8;
+  --muted: #a6a29a;
+  --line: rgba(201, 164, 92, 0.25);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.about-nav {
+  position: relative;
+  z-index: 1000;
+
+  width: 100%;
+
+  min-height: 86px;
+
+  padding: 18px 6vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  background:
+    rgba(7,7,7,0.96);
+
+  backdrop-filter: blur(14px);
+}
+
+
+/* LOGO */
+
+.about-logo {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.about-logo img {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+}
+
+
+/* NAV */
+
+.about-navigation {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+
+.about-navigation a {
+  position: relative;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #d7d2c9;
+
+  padding: 10px 0;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.about-navigation a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 2px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--gold);
+
+  transition:
+    width 0.3s ease;
+}
+
+
+.about-navigation a:hover,
+.about-navigation a.active {
+  color: var(--gold-light);
+}
+
+
+.about-navigation a:hover::after,
+.about-navigation a.active::after {
+  width: 100%;
+}
+
+
+/* MOBILE MENU */
+
+.about-menu {
+  display: none;
+
+  width: 48px;
+  height: 42px;
+
+  border: 0;
+  border-radius: 30px;
+
+  background: #151515;
+
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.about-menu span {
+  width: 18px;
+  height: 1px;
+
+  display: block;
+
+  background: var(--gold-light);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+.about-menu.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+
+.about-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+
+.about-menu.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.about-hero {
+  position: relative;
+
+  min-height: 78vh;
+
+  padding:
+    130px 8vw
+    100px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(201,164,92,0.08),
+      transparent 32%
+    ),
+    #070707;
+}
+
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 950px;
+}
+
+
+.eyebrow {
+  margin-bottom: 25px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+
+.about-hero h1 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(58px, 8vw, 118px);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  letter-spacing: -3px;
+
+  color: var(--white);
+}
+
+
+.about-hero h1 em,
+.about-story h2 em,
+.about-philosophy h2 em,
+.about-cta h2 em {
+  color: var(--gold-light);
+  font-weight: 400;
+}
+
+
+.hero-line {
+  width: 90px;
+  height: 1px;
+
+  margin: 38px 0 25px;
+
+  background: var(--gold);
+}
+
+
+.hero-description {
+  max-width: 620px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* HERO MARK */
+
+.hero-mark {
+  position: absolute;
+
+  right: 9vw;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 260px;
+  height: 260px;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.65;
+}
+
+
+.hero-mark::before {
+  content: "";
+
+  position: absolute;
+
+  width: 205px;
+  height: 205px;
+
+  border: 1px solid rgba(201,164,92,0.14);
+
+  border-radius: 50%;
+}
+
+
+.mark-d {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 115px;
+  font-weight: 400;
+
+  color: var(--gold);
+
+  line-height: 1;
+}
+
+
+.mark-text {
+  position: absolute;
+
+  right: 45px;
+  bottom: 65px;
+
+  font-size: 7px;
+  line-height: 1.5;
+
+  letter-spacing: 2px;
+
+  color: #aaa;
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.about-story {
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+  gap: 60px;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding:
+    140px 6vw;
+
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+
+.story-label {
+  color: var(--gold);
+}
+
+
+.story-label span {
+  display: block;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 28px;
+
+  margin-bottom: 12px;
+}
+
+
+.story-label p {
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+
+.story-content {
+  max-width: 820px;
+}
+
+
+.story-content h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(45px, 5vw, 72px);
+
+  line-height: 0.98;
+
+  font-weight: 500;
+
+  letter-spacing: -1px;
+
+  margin-bottom: 45px;
+}
+
+
+.story-content > p:not(.eyebrow) {
+  max-width: 760px;
+
+  margin-bottom: 25px;
+
+  color: #aaa59c;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.about-philosophy {
+  padding:
+    130px 8vw;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0a0a0a,
+      #070707
+    );
+
+  border-top:
+    1px solid rgba(255,255,255,0.07);
+}
+
+
+.philosophy-heading {
+  margin-bottom: 75px;
+}
+
+
+.about-philosophy h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(52px, 7vw, 100px);
+
+  line-height: 0.88;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+}
+
+
+.philosophy-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+
+  max-width: 1150px;
+}
+
+
+.philosophy-grid article {
+  min-height: 270px;
+
+  padding: 32px;
+
+  border:
+    1px solid rgba(201,164,92,0.18);
+
+  background:
+    rgba(255,255,255,0.015);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.philosophy-grid article:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(201,164,92,0.55);
+}
+
+
+.philosophy-grid span {
+  display: block;
+
+  margin-bottom: 45px;
+
+  color: var(--gold);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 24px;
+}
+
+
+.philosophy-grid h3 {
+  margin-bottom: 15px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 34px;
+
+  font-weight: 500;
+}
+
+
+.philosophy-grid p {
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.about-cta {
+  padding:
+    150px 6vw;
+
+  text-align: center;
+
+  border-top:
+    1px solid rgba(255,255,255,0.07);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(201,164,92,0.07),
+      transparent 45%
+    );
+}
+
+
+.about-cta h2 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(50px, 7vw, 95px);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  margin-bottom: 35px;
+}
+
+
+.about-cta > p:not(.eyebrow) {
+  max-width: 500px;
+
+  margin: 0 auto 38px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* BUTTON */
+
+.gold-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding:
+    15px 25px;
+
+  border:
+    1px solid var(--gold);
+
+  color: var(--gold-light);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.gold-button span {
+  font-size: 18px;
+}
+
+
+.gold-button:hover {
+  background: var(--gold);
+
+  color: #080808;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.about-footer {
+  padding:
+    60px 6vw;
+
+  text-align: center;
+
+  border-top:
+    1px solid rgba(255,255,255,0.08);
+
+  background: #050505;
+}
+
+
+.footer-brand {
+  margin-bottom: 14px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 28px;
+
+  letter-spacing: 2px;
+}
+
+
+.footer-brand strong {
+  color: var(--gold);
+}
+
+
+.about-footer p {
+  color: #85817a;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+
+.footer-contact {
+  margin-top: 18px;
+}
+
+
+.footer-contact a {
+  color: var(--gold-light);
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.footer-contact a:hover {
+  color: white;
+}
+
+
+.footer-contact span {
+  margin: 0 10px;
+
+  color: #555;
+}
+
+
+.about-footer small {
+  display: block;
+
+  margin-top: 30px;
+
+  color: #555;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+.reveal.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .about-nav {
+    min-height: 76px;
+
+    padding:
+      14px 20px;
+  }
+
+
+  .about-logo,
+  .about-logo img {
+    width: 46px;
+    height: 46px;
+  }
+
+
+  .about-menu {
+    display: flex;
+  }
+
+
+  .about-navigation {
+    position: absolute;
+
+    top: 75px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 10px 20px 20px;
+
+    background:
+      rgba(7,7,7,0.98);
+
+    border-bottom:
+      1px solid rgba(201,164,92,0.2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+  }
+
+
+  .about-navigation.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+
+  .about-navigation a {
+    width: 100%;
+
+    padding: 16px 5px;
+
+    border-bottom:
+      1px solid rgba(255,255,255,0.06);
+
+    font-size: 10px;
+  }
+
+
+  .about-navigation a:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* HERO */
+
+  .about-hero {
+    min-height: auto;
+
+    padding:
+      95px 25px
+      90px;
+  }
+
+
+  .about-hero h1 {
+    font-size:
+      clamp(50px, 15vw, 76px);
+
+    letter-spacing: -2px;
+  }
+
+
+  .hero-description {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+
+  .hero-mark {
+    right: -105px;
+    top: 65%;
+
+    width: 220px;
+    height: 220px;
+
+    opacity: 0.28;
+  }
+
+
+  .mark-d {
+    font-size: 90px;
+  }
+
+
+  /* STORY */
+
+  .about-story {
+    display: block;
+
+    padding:
+      90px 25px;
+  }
+
+
+  .story-label {
+    margin-bottom: 45px;
+  }
+
+
+  .story-content h2 {
+    font-size:
+      clamp(43px, 12vw, 65px);
+
+    margin-bottom: 35px;
+  }
+
+
+  .story-content > p:not(.eyebrow) {
+    font-size: 13px;
+
+    line-height: 1.85;
+  }
+
+
+  /* PHILOSOPHY */
+
+  .about-philosophy {
+    padding:
+      90px 25px;
+  }
+
+
+  .philosophy-heading {
+    margin-bottom: 55px;
+  }
+
+
+  .about-philosophy h2 {
+    font-size:
+      clamp(52px, 15vw, 78px);
+  }
+
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .philosophy-grid article {
+    min-height: 220px;
+
+    padding: 27px;
+  }
+
+
+  .philosophy-grid span {
+    margin-bottom: 30px;
+  }
+
+
+  /* CTA */
+
+  .about-cta {
+    padding:
+      100px 25px;
+  }
+
+
+  .about-cta h2 {
+    font-size:
+      clamp(50px, 14vw, 72px);
+  }
+
+
+  /* FOOTER */
+
+  .about-footer {
+    padding:
+      50px 20px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .about-hero h1 {
+    font-size: 51px;
+  }
+
+
+  .story-content h2 {
+    font-size: 45px;
+  }
+
+
+  .about-philosophy h2 {
+    font-size: 55px;
+  }
+
+
+  .about-cta h2 {
+    font-size: 50px;
+  }
+
+
+  .footer-contact span {
+    display: inline-block;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+}
