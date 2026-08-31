@@ -1,0 +1,1315 @@
+/* =========================================================
+   DAMITH PHOTO
+   SERVICES PAGE
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+body{
+  background:#080808;
+  color:#f5f0e8;
+
+  font-family:'Montserrat',sans-serif;
+
+  overflow-x:hidden;
+
+  min-height:100vh;
+}
+
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.service-nav{
+  width:100%;
+  height:90px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 7%;
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(8,8,8,.95);
+
+  border-bottom:
+    1px solid rgba(212,175,55,.18);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.service-logo{
+  width:48px;
+  height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  overflow:hidden;
+}
+
+
+.service-logo img{
+  width:48px !important;
+  height:48px !important;
+
+  max-width:none;
+
+  object-fit:contain;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.service-navigation{
+  display:flex;
+  align-items:center;
+
+  gap:28px;
+}
+
+
+.service-navigation a{
+  position:relative;
+
+  font-size:12px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  color:#999;
+
+  transition:
+    color .3s ease;
+}
+
+
+.service-navigation a::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0;
+  height:1px;
+
+  background:#d4af37;
+
+  transition:
+    width .3s ease;
+}
+
+
+.service-navigation a:hover{
+  color:#d4af37;
+}
+
+
+.service-navigation a:hover::after,
+.service-navigation a.active::after{
+  width:100%;
+}
+
+
+.service-navigation a.active{
+  color:#d4af37;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.service-menu{
+  display:none;
+
+  width:44px;
+  height:44px;
+
+  padding:0;
+
+  border:
+    1px solid rgba(212,175,55,.45);
+
+  border-radius:50%;
+
+  background:transparent;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-direction:column;
+
+  gap:5px;
+
+  cursor:pointer;
+}
+
+
+.service-menu span{
+  display:block;
+
+  width:18px;
+  height:1px;
+
+  background:#d4af37;
+
+  transition:
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+
+.service-menu.open span:nth-child(1){
+  transform:
+    translateY(6px)
+    rotate(45deg);
+}
+
+
+.service-menu.open span:nth-child(2){
+  opacity:0;
+}
+
+
+.service-menu.open span:nth-child(3){
+  transform:
+    translateY(-6px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.service-hero{
+  min-height:
+    calc(100vh - 90px);
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.1fr)
+    minmax(0,.9fr);
+
+  align-items:center;
+
+  gap:50px;
+
+  padding:
+    80px 8%;
+}
+
+
+.service-hero-content{
+  max-width:760px;
+
+  position:relative;
+
+  z-index:2;
+}
+
+
+.service-eyebrow{
+  color:#d4af37;
+
+  font-size:11px;
+
+  letter-spacing:4px;
+
+  line-height:1.6;
+
+  margin-bottom:25px;
+}
+
+
+.service-hero h1{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:
+    clamp(70px,9vw,135px);
+
+  font-weight:600;
+
+  line-height:.88;
+
+  margin-bottom:35px;
+}
+
+
+.service-hero h1 em{
+  color:#d4af37;
+
+  font-style:italic;
+
+  font-weight:500;
+}
+
+
+.service-lead{
+  max-width:620px;
+
+  color:#999;
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  margin-bottom:35px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.service-hero-actions{
+  display:flex;
+
+  align-items:center;
+}
+
+
+.service-btn{
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  min-height:52px;
+
+  padding:
+    16px 30px;
+
+  background:#d4af37;
+
+  color:#080808;
+
+  font-size:11px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  box-shadow:
+    0 0 25px rgba(212,175,55,.16);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+
+.service-btn:hover{
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 12px 35px rgba(212,175,55,.28);
+}
+
+
+/* =========================================================
+   HERO MARK
+========================================================= */
+
+.service-hero-mark{
+  min-height:520px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+}
+
+
+.service-circle{
+  position:absolute;
+
+  border-radius:50%;
+
+  border:
+    1px solid rgba(212,175,55,.45);
+}
+
+
+.circle-one{
+  width:350px;
+  height:350px;
+
+  animation:
+    serviceRotate 15s linear infinite;
+}
+
+
+.circle-two{
+  width:270px;
+  height:270px;
+
+  border-color:
+    rgba(212,175,55,.18);
+
+  animation:
+    serviceRotateReverse 12s linear infinite;
+}
+
+
+.service-mark-text{
+  width:210px;
+  height:210px;
+
+  border:
+    1px solid #d4af37;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-direction:column;
+
+  text-align:center;
+
+  box-shadow:
+    0 0 40px rgba(212,175,55,.08);
+}
+
+
+.service-mark-text span{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:100px;
+
+  line-height:.7;
+
+  color:#d4af37;
+
+  font-style:italic;
+}
+
+
+.service-mark-text small{
+  margin-top:25px;
+
+  color:#999;
+
+  font-size:8px;
+
+  line-height:1.6;
+
+  letter-spacing:4px;
+}
+
+
+@keyframes serviceRotate{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+@keyframes serviceRotateReverse{
+
+  from{
+    transform:rotate(360deg);
+  }
+
+  to{
+    transform:rotate(0deg);
+  }
+
+}
+
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.services-section{
+  padding:
+    130px 8% 0;
+}
+
+
+.services-heading{
+  margin-bottom:70px;
+}
+
+
+.services-heading h2{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:
+    clamp(60px,7vw,105px);
+
+  font-weight:600;
+
+  line-height:.9;
+}
+
+
+.services-heading h2 em{
+  color:#d4af37;
+
+  font-style:italic;
+
+  font-weight:500;
+}
+
+
+/* =========================================================
+   SERVICE LIST
+========================================================= */
+
+.services-list{
+  border-top:
+    1px solid rgba(212,175,55,.18);
+}
+
+
+.service-item{
+  display:grid;
+
+  grid-template-columns:
+    120px
+    minmax(0,1fr);
+
+  gap:40px;
+
+  padding:
+    60px 0;
+
+  border-bottom:
+    1px solid rgba(212,175,55,.18);
+
+  position:relative;
+
+  transition:
+    padding-left .4s ease,
+    background .4s ease;
+}
+
+
+.service-item:hover{
+  padding-left:25px;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(212,175,55,.055),
+      transparent 55%
+    );
+}
+
+
+.service-number{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:25px;
+
+  color:#d4af37;
+
+  padding-top:8px;
+}
+
+
+.service-item-content{
+  max-width:850px;
+}
+
+
+.service-item-content h3{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:
+    clamp(48px,5vw,75px);
+
+  font-weight:600;
+
+  line-height:.95;
+
+  margin-bottom:22px;
+
+  transition:
+    color .3s ease;
+}
+
+
+.service-item:hover h3{
+  color:#d4af37;
+}
+
+
+.service-item-content p{
+  max-width:650px;
+
+  color:#888;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+  margin-bottom:28px;
+}
+
+
+.service-link{
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  color:#d4af37;
+
+  font-size:11px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  border-bottom:
+    1px solid rgba(212,175,55,.5);
+
+  padding-bottom:6px;
+
+  transition:
+    gap .3s ease,
+    color .3s ease;
+}
+
+
+.service-link span{
+  font-size:17px;
+
+  line-height:10px;
+}
+
+
+.service-link:hover{
+  gap:17px;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.service-process{
+  padding:
+    150px 8%;
+
+  text-align:center;
+}
+
+
+.service-process h2{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:
+    clamp(58px,7vw,100px);
+
+  font-weight:600;
+
+  line-height:.9;
+
+  margin-bottom:80px;
+}
+
+
+.service-process h2 em{
+  color:#d4af37;
+
+  font-style:italic;
+
+  font-weight:500;
+}
+
+
+.process-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  border-top:
+    1px solid rgba(212,175,55,.18);
+
+  border-bottom:
+    1px solid rgba(212,175,55,.18);
+}
+
+
+.process-card{
+  padding:
+    55px 35px;
+
+  min-height:240px;
+
+  border-right:
+    1px solid rgba(212,175,55,.18);
+}
+
+
+.process-card:last-child{
+  border-right:0;
+}
+
+
+.process-card span{
+  display:block;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:22px;
+
+  color:#d4af37;
+
+  margin-bottom:25px;
+}
+
+
+.process-card h3{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:42px;
+
+  font-weight:600;
+
+  margin-bottom:18px;
+}
+
+
+.process-card p{
+  color:#777;
+
+  font-size:13px;
+
+  line-height:1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.service-cta{
+  padding:
+    150px 8%;
+
+  text-align:center;
+
+  border-top:
+    1px solid rgba(212,175,55,.18);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(212,175,55,.07),
+      transparent 55%
+    );
+}
+
+
+.service-cta h2{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:
+    clamp(60px,7vw,105px);
+
+  font-weight:600;
+
+  line-height:.9;
+
+  margin-bottom:30px;
+}
+
+
+.service-cta h2 em{
+  color:#d4af37;
+
+  font-style:italic;
+
+  font-weight:500;
+}
+
+
+.service-cta > p:not(.service-eyebrow){
+  color:#777;
+
+  font-size:14px;
+
+  margin-bottom:35px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.service-footer{
+  padding:
+    70px 8%;
+
+  text-align:center;
+
+  border-top:
+    1px solid rgba(212,175,55,.18);
+}
+
+
+.service-footer-logo{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:30px;
+
+  letter-spacing:3px;
+
+  margin-bottom:20px;
+}
+
+
+.service-footer-logo b{
+  color:#d4af37;
+}
+
+
+.service-footer p{
+  color:#777;
+
+  font-size:12px;
+
+  line-height:1.8;
+
+  margin:10px;
+}
+
+
+.service-footer p a{
+  color:#aaa;
+
+  transition:
+    color .3s ease;
+}
+
+
+.service-footer p a:hover{
+  color:#d4af37;
+}
+
+
+.service-footer small{
+  display:block;
+
+  color:#555;
+
+  font-size:10px;
+
+  letter-spacing:1px;
+
+  line-height:1.6;
+
+  margin-top:30px;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+  opacity:0;
+
+  transform:
+    translateY(35px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+
+.reveal.visible{
+  opacity:1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+  .service-nav{
+    height:75px;
+
+    padding:
+      0 6%;
+  }
+
+
+  .service-logo{
+    width:40px;
+    height:40px;
+  }
+
+
+  .service-logo img{
+    width:40px !important;
+    height:40px !important;
+  }
+
+
+  .service-menu{
+    display:flex;
+  }
+
+
+  .service-navigation{
+    position:absolute;
+
+    top:75px;
+    left:0;
+
+    width:100%;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:0;
+
+    padding:
+      25px 8%;
+
+    background:#080808;
+
+    border-bottom:
+      1px solid rgba(212,175,55,.2);
+
+    box-shadow:
+      0 20px 40px rgba(0,0,0,.4);
+  }
+
+
+  .service-navigation.open{
+    display:flex;
+  }
+
+
+  .service-navigation a{
+    width:100%;
+
+    padding:14px 0;
+
+    font-size:12px;
+  }
+
+
+  .service-navigation a::after{
+    display:none;
+  }
+
+
+  /* HERO */
+
+  .service-hero{
+    grid-template-columns:1fr;
+
+    min-height:auto;
+
+    padding:
+      65px 7%
+      50px;
+
+    gap:30px;
+  }
+
+
+  .service-hero h1{
+    font-size:58px;
+
+    line-height:.92;
+  }
+
+
+  .service-lead{
+    font-size:14px;
+
+    line-height:1.8;
+  }
+
+
+  .service-hero-mark{
+    min-height:350px;
+  }
+
+
+  .circle-one{
+    width:285px;
+    height:285px;
+  }
+
+
+  .circle-two{
+    width:225px;
+    height:225px;
+  }
+
+
+  .service-mark-text{
+    width:175px;
+    height:175px;
+  }
+
+
+  .service-mark-text span{
+    font-size:80px;
+  }
+
+
+  /* SERVICES */
+
+  .services-section{
+    padding:
+      110px 7% 0;
+  }
+
+
+  .services-heading{
+    margin-bottom:55px;
+  }
+
+
+  .services-heading h2{
+    font-size:56px;
+  }
+
+
+  .service-item{
+    grid-template-columns:
+      55px
+      minmax(0,1fr);
+
+    gap:15px;
+
+    padding:
+      48px 0;
+  }
+
+
+  .service-item:hover{
+    padding-left:0;
+  }
+
+
+  .service-number{
+    font-size:21px;
+  }
+
+
+  .service-item-content h3{
+    font-size:48px;
+  }
+
+
+  .service-item-content p{
+    font-size:13px;
+
+    line-height:1.8;
+  }
+
+
+  /* PROCESS */
+
+  .service-process{
+    padding:
+      110px 7%;
+  }
+
+
+  .service-process h2{
+    font-size:55px;
+
+    margin-bottom:55px;
+  }
+
+
+  .process-grid{
+    grid-template-columns:1fr;
+  }
+
+
+  .process-card{
+    min-height:auto;
+
+    padding:
+      45px 25px;
+
+    border-right:0;
+
+    border-bottom:
+      1px solid rgba(212,175,55,.18);
+  }
+
+
+  .process-card:last-child{
+    border-bottom:0;
+  }
+
+
+  .process-card h3{
+    font-size:38px;
+  }
+
+
+  /* CTA */
+
+  .service-cta{
+    padding:
+      110px 7%;
+  }
+
+
+  .service-cta h2{
+    font-size:56px;
+  }
+
+
+  /* FOOTER */
+
+  .service-footer{
+    padding:
+      55px 7%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:500px){
+
+  .service-logo{
+    width:36px;
+    height:36px;
+  }
+
+
+  .service-logo img{
+    width:36px !important;
+    height:36px !important;
+  }
+
+
+  .service-hero{
+    padding:
+      50px 7%
+      35px;
+  }
+
+
+  .service-eyebrow{
+    font-size:9px;
+
+    letter-spacing:3px;
+  }
+
+
+  .service-hero h1{
+    font-size:52px;
+  }
+
+
+  .service-lead{
+    font-size:13px;
+  }
+
+
+  .service-btn{
+    min-height:48px;
+
+    padding:
+      15px 24px;
+  }
+
+
+  .service-hero-mark{
+    min-height:315px;
+  }
+
+
+  .circle-one{
+    width:250px;
+    height:250px;
+  }
+
+
+  .circle-two{
+    width:195px;
+    height:195px;
+  }
+
+
+  .service-mark-text{
+    width:155px;
+    height:155px;
+  }
+
+
+  .service-mark-text span{
+    font-size:70px;
+  }
+
+
+  .services-section{
+    padding:
+      95px 7% 0;
+  }
+
+
+  .services-heading h2{
+    font-size:50px;
+  }
+
+
+  .service-item{
+    grid-template-columns:
+      42px
+      minmax(0,1fr);
+
+    gap:10px;
+
+    padding:
+      45px 0;
+  }
+
+
+  .service-item-content h3{
+    font-size:43px;
+  }
+
+
+  .service-item-content p{
+    font-size:13px;
+  }
+
+
+  .service-process{
+    padding:
+      95px 7%;
+  }
+
+
+  .service-process h2{
+    font-size:50px;
+  }
+
+
+  .service-cta{
+    padding:
+      95px 7%;
+  }
+
+
+  .service-cta h2{
+    font-size:50px;
+  }
+
+
+  .service-footer-logo{
+    font-size:25px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+
+    animation-iteration-count:1 !important;
+
+    transition-duration:.01ms !important;
+  }
+
+}
