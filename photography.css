@@ -1,6 +1,6 @@
 /* =========================================================
    DAMITH PHOTO
-   PHOTOGRAPHY PAGE
+   PHOTOGRAPHY PAGE — FINAL CSS
 ========================================================= */
 
 
@@ -14,33 +14,36 @@
   box-sizing:border-box;
 }
 
-
 html{
   scroll-behavior:smooth;
 }
 
-
 body{
+  margin:0;
+  padding:0;
+
+  min-height:100vh;
+
   background:#080808;
   color:#f5f0e8;
 
   font-family:'Montserrat',sans-serif;
 
   overflow-x:hidden;
-
-  min-height:100vh;
 }
-
 
 img{
   display:block;
   max-width:100%;
 }
 
-
 a{
   color:inherit;
   text-decoration:none;
+}
+
+button{
+  font-family:inherit;
 }
 
 
@@ -62,7 +65,7 @@ a{
   top:0;
   z-index:1000;
 
-  background:rgba(8,8,8,.95);
+  background:rgba(8,8,8,.96);
 
   border-bottom:
     1px solid rgba(212,175,55,.18);
@@ -87,16 +90,22 @@ a{
   flex-shrink:0;
 
   overflow:hidden;
-}
 
+  cursor:pointer;
+}
 
 .photo-logo img{
   width:48px !important;
   height:48px !important;
 
-  max-width:none;
+  max-width:none !important;
+
+  display:block;
 
   object-fit:contain;
+
+  border:0;
+  outline:0;
 }
 
 
@@ -106,14 +115,16 @@ a{
 
 .photo-navigation{
   display:flex;
+
   align-items:center;
 
   gap:28px;
 }
 
-
 .photo-navigation a{
   position:relative;
+
+  display:inline-block;
 
   font-size:12px;
 
@@ -126,7 +137,6 @@ a{
   transition:
     color .3s ease;
 }
-
 
 .photo-navigation a::after{
   content:"";
@@ -145,17 +155,14 @@ a{
     width .3s ease;
 }
 
-
 .photo-navigation a:hover{
   color:#d4af37;
 }
-
 
 .photo-navigation a:hover::after,
 .photo-navigation a.active::after{
   width:100%;
 }
-
 
 .photo-navigation a.active{
   color:#d4af37;
@@ -191,7 +198,6 @@ a{
   cursor:pointer;
 }
 
-
 .photo-menu span{
   display:block;
 
@@ -205,19 +211,20 @@ a{
     opacity .3s ease;
 }
 
-
 .photo-menu.open span:nth-child(1){
-  transform:translateY(6px) rotate(45deg);
+  transform:
+    translateY(6px)
+    rotate(45deg);
 }
-
 
 .photo-menu.open span:nth-child(2){
   opacity:0;
 }
 
-
 .photo-menu.open span:nth-child(3){
-  transform:translateY(-6px) rotate(-45deg);
+  transform:
+    translateY(-6px)
+    rotate(-45deg);
 }
 
 
@@ -226,6 +233,8 @@ a{
 ========================================================= */
 
 .photo-hero{
+  width:100%;
+
   min-height:
     calc(100vh - 90px);
 
@@ -243,8 +252,9 @@ a{
     70px 8%;
 }
 
-
 .photo-hero-content{
+  width:100%;
+
   max-width:720px;
 
   position:relative;
@@ -253,7 +263,13 @@ a{
 }
 
 
+/* =========================================================
+   EYEBROW
+========================================================= */
+
 .photo-eyebrow{
+  margin:0 0 25px;
+
   color:#d4af37;
 
   font-size:11px;
@@ -261,13 +277,19 @@ a{
   letter-spacing:4px;
 
   line-height:1.6;
-
-  margin-bottom:25px;
 }
 
 
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
 .photo-hero h1{
-  font-family:'Cormorant Garamond',serif;
+  margin:0 0 35px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
 
   font-size:
     clamp(68px,9vw,135px);
@@ -275,10 +297,7 @@ a{
   font-weight:600;
 
   line-height:.88;
-
-  margin-bottom:35px;
 }
-
 
 .photo-hero h1 em{
   color:#d4af37;
@@ -289,21 +308,25 @@ a{
 }
 
 
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
 .photo-lead{
   max-width:600px;
+
+  margin:0 0 35px;
 
   color:#999;
 
   font-size:16px;
 
   line-height:1.9;
-
-  margin-bottom:35px;
 }
 
 
 /* =========================================================
-   BUTTONS
+   BUTTON AREA
 ========================================================= */
 
 .photo-actions{
@@ -317,6 +340,10 @@ a{
 }
 
 
+/* =========================================================
+   BUTTON BASE
+========================================================= */
+
 .photo-btn{
   display:inline-flex;
 
@@ -328,6 +355,8 @@ a{
   padding:
     16px 30px;
 
+  border:0;
+
   font-size:11px;
 
   font-weight:600;
@@ -335,6 +364,8 @@ a{
   letter-spacing:2px;
 
   text-transform:uppercase;
+
+  cursor:pointer;
 
   transition:
     transform .35s ease,
@@ -344,48 +375,89 @@ a{
 }
 
 
+/* =========================================================
+   GOLD BUTTON
+========================================================= */
+
 .photo-btn-gold{
   background:#d4af37;
 
   color:#080808;
 
   box-shadow:
-    0 0 25px rgba(212,175,55,.16);
+    0 0 25px
+    rgba(212,175,55,.16);
 }
-
 
 .photo-btn-gold:hover{
-  transform:translateY(-4px);
+  transform:
+    translateY(-4px);
 
   box-shadow:
-    0 12px 35px rgba(212,175,55,.28);
+    0 12px 35px
+    rgba(212,175,55,.28);
 }
 
+
+/* =========================================================
+   OUTLINE BUTTON
+========================================================= */
 
 .photo-btn-outline{
   color:#d4af37;
 
   border:
-    1px solid rgba(212,175,55,.55);
+    1px solid
+    rgba(212,175,55,.55);
 
   background:transparent;
 }
-
 
 .photo-btn-outline:hover{
   color:#080808;
 
   background:#d4af37;
 
-  transform:translateY(-4px);
+  transform:
+    translateY(-4px);
 }
 
 
 /* =========================================================
-   HERO LOGO
+   IMPORTANT
+   REMOVE VIEW PORTFOLIO COMPLETELY
+========================================================= */
+
+/*
+   Even if an old HTML version still contains
+   View Portfolio / portfolio.html,
+   this CSS will hide it.
+*/
+
+.photo-actions a[href="portfolio.html"]{
+  display:none !important;
+}
+
+.photo-actions .portfolio-btn{
+  display:none !important;
+}
+
+.photo-actions .view-portfolio{
+  display:none !important;
+}
+
+.photo-actions .view-portfolio-btn{
+  display:none !important;
+}
+
+
+/* =========================================================
+   HERO LOGO AREA
 ========================================================= */
 
 .photo-hero-mark{
+  width:100%;
+
   min-height:560px;
 
   position:relative;
@@ -397,11 +469,17 @@ a{
 }
 
 
+/* =========================================================
+   MAIN HERO LOGO
+========================================================= */
+
 .photo-hero-mark img{
   width:274px;
   height:274px;
 
-  max-width:none;
+  max-width:none !important;
+
+  display:block;
 
   object-fit:cover;
 
@@ -410,8 +488,14 @@ a{
   position:relative;
 
   z-index:2;
+
+  border:0;
 }
 
+
+/* =========================================================
+   GOLD RING
+========================================================= */
 
 .photo-ring{
   position:absolute;
@@ -425,13 +509,22 @@ a{
   border-radius:50%;
 
   box-shadow:
-    0 0 18px rgba(212,175,55,.4),
-    0 0 50px rgba(212,175,55,.16);
+    0 0 18px
+    rgba(212,175,55,.40),
+
+    0 0 50px
+    rgba(212,175,55,.16);
 
   animation:
     photoSpin 12s linear infinite;
+
+  z-index:1;
 }
 
+
+/* =========================================================
+   GOLD LIGHT
+========================================================= */
 
 .photo-ring::before{
   content:"";
@@ -441,21 +534,27 @@ a{
   width:10px;
   height:10px;
 
+  top:-6px;
+  left:50%;
+
+  transform:
+    translateX(-50%);
+
   border-radius:50%;
 
   background:#f4d35e;
 
-  top:-6px;
-  left:50%;
-
-  transform:translateX(-50%);
-
   box-shadow:
     0 0 15px #d4af37,
     0 0 30px #d4af37,
-    0 0 50px rgba(212,175,55,.7);
+    0 0 50px
+    rgba(212,175,55,.7);
 }
 
+
+/* =========================================================
+   RING ANIMATION
+========================================================= */
 
 @keyframes photoSpin{
 
@@ -475,15 +574,20 @@ a{
 ========================================================= */
 
 .photo-intro{
+  width:100%;
+
   max-width:900px;
 
   padding:
     150px 8%;
 }
 
-
 .photo-intro h2{
-  font-family:'Cormorant Garamond',serif;
+  margin:0 0 35px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
 
   font-size:
     clamp(58px,7vw,100px);
@@ -491,10 +595,7 @@ a{
   font-weight:600;
 
   line-height:.9;
-
-  margin-bottom:35px;
 }
-
 
 .photo-intro h2 em{
   color:#d4af37;
@@ -504,9 +605,10 @@ a{
   font-weight:500;
 }
 
-
 .photo-intro > p:last-child{
   max-width:650px;
+
+  margin:0;
 
   color:#999;
 
@@ -517,10 +619,12 @@ a{
 
 
 /* =========================================================
-   PHOTO GRID
+   PHOTOGRAPHY GRID
 ========================================================= */
 
 .photo-grid{
+  width:100%;
+
   display:grid;
 
   grid-template-columns:
@@ -533,6 +637,10 @@ a{
     1px solid rgba(212,175,55,.18);
 }
 
+
+/* =========================================================
+   PHOTO CARD
+========================================================= */
 
 .photo-card{
   min-height:420px;
@@ -549,17 +657,14 @@ a{
     background .4s ease;
 }
 
-
 .photo-card:nth-child(odd){
   border-right:
     1px solid rgba(212,175,55,.18);
 }
 
-
 .photo-card:nth-last-child(-n+2){
   border-bottom:0;
 }
-
 
 .photo-card:hover{
   background:
@@ -571,65 +676,89 @@ a{
 }
 
 
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
 .photo-number{
   display:block;
 
-  font-family:'Cormorant Garamond',serif;
+  margin-bottom:35px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
 
   font-size:22px;
 
   color:#d4af37;
-
-  margin-bottom:35px;
 }
 
 
+/* =========================================================
+   CARD LINE
+========================================================= */
+
 .photo-card-line{
   width:45px;
-
   height:1px;
 
-  background:#d4af37;
-
   margin-bottom:30px;
+
+  background:#d4af37;
 
   transition:
     width .4s ease;
 }
-
 
 .photo-card:hover .photo-card-line{
   width:80px;
 }
 
 
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
 .photo-card h3{
-  font-family:'Cormorant Garamond',serif;
+  margin:0 0 25px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
 
   font-size:58px;
 
   font-weight:600;
 
   line-height:1;
-
-  margin-bottom:25px;
 }
 
 
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
 .photo-card p{
   max-width:480px;
+
+  margin:0 0 30px;
 
   color:#888;
 
   font-size:14px;
 
   line-height:1.9;
-
-  margin-bottom:30px;
 }
 
 
+/* =========================================================
+   CARD LINK
+========================================================= */
+
 .photo-card-link{
+  display:inline-block;
+
   color:#d4af37;
 
   font-size:11px;
@@ -639,17 +768,27 @@ a{
   text-transform:uppercase;
 
   border-bottom:
-    1px solid rgba(212,175,55,.5);
+    1px solid
+    rgba(212,175,55,.5);
 
   padding-bottom:5px;
+
+  transition:
+    opacity .3s ease;
+}
+
+.photo-card-link:hover{
+  opacity:.7;
 }
 
 
 /* =========================================================
-   QUOTE
+   PHILOSOPHY / QUOTE
 ========================================================= */
 
 .photo-quote{
+  width:100%;
+
   min-height:500px;
 
   display:flex;
@@ -671,9 +810,12 @@ a{
     );
 }
 
-
 .photo-quote h2{
-  font-family:'Cormorant Garamond',serif;
+  margin:0 0 25px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
 
   font-size:
     clamp(58px,7vw,100px);
@@ -681,10 +823,7 @@ a{
   font-weight:600;
 
   line-height:.9;
-
-  margin-bottom:25px;
 }
-
 
 .photo-quote h2 em{
   color:#d4af37;
@@ -694,8 +833,9 @@ a{
   font-weight:500;
 }
 
-
 .photo-quote > div > p:last-child{
+  margin:0;
+
   color:#777;
 
   font-size:14px;
@@ -705,10 +845,12 @@ a{
 
 
 /* =========================================================
-   CTA
+   FINAL CTA
 ========================================================= */
 
 .photo-cta{
+  width:100%;
+
   padding:
     150px 8%;
 
@@ -725,9 +867,12 @@ a{
     );
 }
 
-
 .photo-cta h2{
-  font-family:'Cormorant Garamond',serif;
+  margin:0 0 40px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
 
   font-size:
     clamp(58px,7vw,100px);
@@ -735,10 +880,7 @@ a{
   font-weight:600;
 
   line-height:.9;
-
-  margin-bottom:40px;
 }
-
 
 .photo-cta h2 em{
   color:#d4af37;
@@ -754,6 +896,8 @@ a{
 ========================================================= */
 
 .photo-footer{
+  width:100%;
+
   padding:
     70px 8%;
 
@@ -763,33 +907,31 @@ a{
     1px solid rgba(212,175,55,.18);
 }
 
-
 .photo-footer-logo{
-  font-family:'Cormorant Garamond',serif;
+  margin-bottom:20px;
+
+  font-family:
+    'Cormorant Garamond',
+    serif;
 
   font-size:30px;
 
   letter-spacing:3px;
-
-  margin-bottom:20px;
 }
-
 
 .photo-footer-logo b{
   color:#d4af37;
 }
 
-
 .photo-footer p{
+  margin:10px;
+
   color:#777;
 
   font-size:12px;
 
   line-height:1.8;
-
-  margin:10px;
 }
-
 
 .photo-footer p a{
   color:#aaa;
@@ -798,14 +940,14 @@ a{
     color .3s ease;
 }
 
-
 .photo-footer p a:hover{
   color:#d4af37;
 }
 
-
 .photo-footer small{
   display:block;
+
+  margin-top:30px;
 
   color:#555;
 
@@ -814,13 +956,11 @@ a{
   letter-spacing:1px;
 
   line-height:1.6;
-
-  margin-top:30px;
 }
 
 
 /* =========================================================
-   REVEAL
+   SCROLL REVEAL
 ========================================================= */
 
 .reveal{
@@ -834,7 +974,6 @@ a{
     transform .8s ease;
 }
 
-
 .reveal.visible{
   opacity:1;
 
@@ -844,10 +983,12 @@ a{
 
 
 /* =========================================================
-   MOBILE
+   MOBILE — 800px
 ========================================================= */
 
 @media(max-width:800px){
+
+  /* HEADER */
 
   .photo-nav{
     height:75px;
@@ -857,11 +998,12 @@ a{
   }
 
 
+  /* LOGO */
+
   .photo-logo{
     width:40px;
     height:40px;
   }
-
 
   .photo-logo img{
     width:40px !important;
@@ -869,10 +1011,14 @@ a{
   }
 
 
+  /* MENU */
+
   .photo-menu{
     display:flex;
   }
 
+
+  /* MOBILE NAVIGATION */
 
   .photo-navigation{
     position:absolute;
@@ -896,26 +1042,25 @@ a{
     background:#080808;
 
     border-bottom:
-      1px solid rgba(212,175,55,.2);
+      1px solid rgba(212,175,55,.20);
 
     box-shadow:
-      0 20px 40px rgba(0,0,0,.4);
+      0 20px 40px
+      rgba(0,0,0,.40);
   }
-
 
   .photo-navigation.open{
     display:flex;
   }
 
-
   .photo-navigation a{
     width:100%;
 
-    padding:14px 0;
+    padding:
+      14px 0;
 
     font-size:12px;
   }
-
 
   .photo-navigation a::after{
     display:none;
@@ -936,13 +1081,11 @@ a{
     gap:20px;
   }
 
-
   .photo-hero h1{
     font-size:58px;
 
     line-height:.92;
   }
-
 
   .photo-lead{
     font-size:14px;
@@ -951,10 +1094,14 @@ a{
   }
 
 
+  /* BUTTON */
+
   .photo-actions{
     align-items:flex-start;
   }
 
+
+  /* HERO LOGO */
 
   .photo-hero-mark{
     min-height:340px;
@@ -962,12 +1109,10 @@ a{
     margin-top:10px;
   }
 
-
   .photo-hero-mark img{
     width:235px;
     height:235px;
   }
-
 
   .photo-ring{
     width:265px;
@@ -982,11 +1127,9 @@ a{
       110px 7%;
   }
 
-
   .photo-intro h2{
     font-size:56px;
   }
-
 
   .photo-intro > p:last-child{
     font-size:14px;
@@ -999,7 +1142,6 @@ a{
     grid-template-columns:1fr;
   }
 
-
   .photo-card{
     min-height:auto;
 
@@ -1009,14 +1151,13 @@ a{
     border-right:0 !important;
 
     border-bottom:
-      1px solid rgba(212,175,55,.18) !important;
+      1px solid
+      rgba(212,175,55,.18) !important;
   }
-
 
   .photo-card:last-child{
     border-bottom:0 !important;
   }
-
 
   .photo-card h3{
     font-size:52px;
@@ -1032,7 +1173,6 @@ a{
       90px 7%;
   }
 
-
   .photo-quote h2{
     font-size:56px;
   }
@@ -1044,7 +1184,6 @@ a{
     padding:
       110px 7%;
   }
-
 
   .photo-cta h2{
     font-size:56px;
@@ -1062,16 +1201,17 @@ a{
 
 
 /* =========================================================
-   SMALL MOBILE
+   SMALL MOBILE — 500px
 ========================================================= */
 
 @media(max-width:500px){
+
+  /* LOGO */
 
   .photo-logo{
     width:36px;
     height:36px;
   }
-
 
   .photo-logo img{
     width:36px !important;
@@ -1079,12 +1219,13 @@ a{
   }
 
 
+  /* HERO */
+
   .photo-hero{
     padding:
       50px 7%
       35px;
   }
-
 
   .photo-eyebrow{
     font-size:9px;
@@ -1092,16 +1233,16 @@ a{
     letter-spacing:3px;
   }
 
-
   .photo-hero h1{
     font-size:53px;
   }
-
 
   .photo-lead{
     font-size:13px;
   }
 
+
+  /* BUTTON */
 
   .photo-actions{
     flex-direction:column;
@@ -1111,7 +1252,6 @@ a{
     width:100%;
   }
 
-
   .photo-btn{
     min-height:48px;
 
@@ -1120,16 +1260,16 @@ a{
   }
 
 
+  /* LOGO */
+
   .photo-hero-mark{
     min-height:315px;
   }
-
 
   .photo-hero-mark img{
     width:215px;
     height:215px;
   }
-
 
   .photo-ring{
     width:240px;
@@ -1137,32 +1277,35 @@ a{
   }
 
 
+  /* INTRO */
+
   .photo-intro{
     padding:
       95px 7%;
   }
-
 
   .photo-intro h2{
     font-size:50px;
   }
 
 
+  /* CARDS */
+
   .photo-card{
     padding:
       48px 7%;
   }
 
-
   .photo-card h3{
     font-size:48px;
   }
-
 
   .photo-card p{
     font-size:13px;
   }
 
+
+  /* QUOTE + CTA */
 
   .photo-quote h2,
   .photo-cta h2{
@@ -1170,10 +1313,28 @@ a{
   }
 
 
+  /* FOOTER */
+
   .photo-footer-logo{
     font-size:25px;
   }
 
+}
+
+
+/* =========================================================
+   EXTRA SAFETY — HIDE PORTFOLIO ANYWHERE IN PHOTO ACTIONS
+========================================================= */
+
+.photo-actions > a:not([href="contact.html"]){
+  /*
+    The Hero should only contain the Contact / Book a Session
+    button.
+  */
+}
+
+.photo-actions > a[href*="portfolio"]{
+  display:none !important;
 }
 
 
@@ -1186,7 +1347,6 @@ a{
   html{
     scroll-behavior:auto;
   }
-
 
   *,
   *::before,
