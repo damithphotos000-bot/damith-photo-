@@ -14,10 +14,9 @@
 
   <meta
     name="description"
-    content="Explore Damith Photo's wedding, portrait, event, model, pre-shoot and cinematic photography."
+    content="Explore Damith Photo photography — weddings, portraits, events, models, pre-shoots and cinematic visual stories."
   >
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -31,10 +30,10 @@
     rel="stylesheet"
   >
 
-  <!-- Main CSS -->
+  <!-- Photography Page CSS -->
   <link
     rel="stylesheet"
-    href="style.css"
+    href="photography.css"
   >
 
 </head>
@@ -47,14 +46,11 @@
        HEADER
   ====================================================== -->
 
-  <header class="nav">
-
-
-    <!-- LOGO -->
+  <header class="photo-nav">
 
     <a
       href="index.html"
-      class="header-logo"
+      class="photo-logo"
       aria-label="Damith Photo Home"
     >
 
@@ -66,25 +62,24 @@
     </a>
 
 
-    <!-- MOBILE MENU -->
-
     <button
-      class="menu"
+      class="photo-menu"
       type="button"
       aria-label="Open navigation menu"
       aria-expanded="false"
-      aria-controls="main-navigation"
+      aria-controls="photo-navigation"
     >
 
-      <span>☰</span>
+      <span></span>
+      <span></span>
+      <span></span>
 
     </button>
 
 
-    <!-- NAVIGATION -->
-
     <nav
-      id="main-navigation"
+      id="photo-navigation"
+      class="photo-navigation"
       aria-label="Main navigation"
     >
 
@@ -125,7 +120,7 @@
        MAIN
   ====================================================== -->
 
-  <main class="photography-page">
+  <main>
 
 
     <!-- ===================================================
@@ -134,14 +129,11 @@
 
     <section class="photo-hero">
 
+      <div class="photo-hero-content">
 
-      <div class="photo-hero-copy reveal">
-
-
-        <p class="eyebrow">
-          THE ART OF THE FRAME
+        <p class="photo-eyebrow">
+          THE CRAFT • DAMITH PHOTO
         </p>
-
 
         <h1>
           Photography
@@ -149,140 +141,105 @@
           <em>with feeling.</em>
         </h1>
 
-
-        <p class="lead">
-
+        <p class="photo-lead">
           Elegant compositions, honest emotions and
-          cinematic finishing — created around your story.
-
+          cinematic finishing — made around your story.
         </p>
 
-
-        <div class="actions">
+        <div class="photo-actions">
 
           <a
             href="portfolio.html"
-            class="btn gold"
+            class="photo-btn photo-btn-gold"
           >
             View Portfolio
           </a>
 
           <a
             href="contact.html"
-            class="btn ghost"
+            class="photo-btn photo-btn-outline"
           >
             Book a Session
           </a>
 
         </div>
 
-
       </div>
 
 
-      <!-- HERO VISUAL -->
+      <div class="photo-hero-mark">
 
-      <div class="photo-hero-visual reveal">
+        <div class="photo-ring"></div>
 
-        <div class="photo-frame">
-
-          <div class="photo-frame-inner">
-
-            <span>
-              DAMITH
-            </span>
-
-            <strong>
-              PHOTO
-            </strong>
-
-            <small>
-              VISUAL STORIES
-            </small>
-
-          </div>
-
-        </div>
+        <img
+          src="5F45AFE8-B9B1-4BA0-9036-7DCE2C231B13.png"
+          alt="Damith Photo"
+        >
 
       </div>
-
 
     </section>
 
 
 
     <!-- ===================================================
-         INTRO
+         INTRO STRIP
     ==================================================== -->
 
-    <section class="photo-intro reveal">
+    <section class="photo-intro">
 
-
-      <p class="eyebrow">
-        WHAT WE CAPTURE
+      <p class="photo-eyebrow">
+        OUR SPECIALITIES
       </p>
-
 
       <h2>
-        Real moments.
+        Every story has
         <br>
-        <em>Beautifully remembered.</em>
+        <em>its own light.</em>
       </h2>
 
-
       <p>
-
-        Every photograph should feel like more than
-        an image. It should bring back the atmosphere,
-        emotion and story of the moment.
-
+        We create photographs that feel natural,
+        cinematic and personal — from quiet portraits
+        to unforgettable celebrations.
       </p>
-
 
     </section>
 
 
 
     <!-- ===================================================
-         PHOTOGRAPHY CATEGORIES
+         SERVICES / CATEGORIES
     ==================================================== -->
 
-    <section class="photo-categories">
+    <section class="photo-grid">
 
 
       <!-- WEDDING -->
 
-      <article class="photo-category reveal">
+      <article class="photo-card reveal">
 
         <span class="photo-number">
           01
         </span>
 
-        <div class="photo-category-content">
+        <div class="photo-card-line"></div>
 
-          <p class="eyebrow">
-            LOVE STORIES
-          </p>
+        <h3>
+          Wedding
+        </h3>
 
-          <h2>
-            Wedding
-          </h2>
+        <p>
+          From getting-ready details to the final dance,
+          every emotion is preserved beautifully.
+        </p>
 
-          <p>
-
-            From getting-ready details to the final dance,
-            every emotion is preserved beautifully.
-
-          </p>
-
-          <a
-            href="contact.html"
-            class="text-link"
-          >
-            Plan your wedding →
-          </a>
-
-        </div>
+        <a
+          href="contact.html"
+          class="photo-card-link"
+        >
+          Enquire →
+        </a>
 
       </article>
 
@@ -290,37 +247,29 @@
 
       <!-- PORTRAIT -->
 
-      <article class="photo-category reveal">
+      <article class="photo-card reveal">
 
         <span class="photo-number">
           02
         </span>
 
-        <div class="photo-category-content">
+        <div class="photo-card-line"></div>
 
-          <p class="eyebrow">
-            PERSONALITY
-          </p>
+        <h3>
+          Portrait
+        </h3>
 
-          <h2>
-            Portrait
-          </h2>
+        <p>
+          Editorial portraits designed around personality,
+          light and confident expression.
+        </p>
 
-          <p>
-
-            Editorial portraits designed around personality,
-            light and confident expression.
-
-          </p>
-
-          <a
-            href="contact.html"
-            class="text-link"
-          >
-            Create your portrait →
-          </a>
-
-        </div>
+        <a
+          href="contact.html"
+          class="photo-card-link"
+        >
+          Enquire →
+        </a>
 
       </article>
 
@@ -328,75 +277,59 @@
 
       <!-- EVENTS -->
 
-      <article class="photo-category reveal">
+      <article class="photo-card reveal">
 
         <span class="photo-number">
           03
         </span>
 
-        <div class="photo-category-content">
+        <div class="photo-card-line"></div>
 
-          <p class="eyebrow">
-            MOMENTS
-          </p>
+        <h3>
+          Events
+        </h3>
 
-          <h2>
-            Events
-          </h2>
+        <p>
+          High-energy coverage with polished,
+          story-driven frames for every important moment.
+        </p>
 
-          <p>
-
-            High-energy coverage with polished,
-            story-driven frames for every important moment.
-
-          </p>
-
-          <a
-            href="contact.html"
-            class="text-link"
-          >
-            Cover your event →
-          </a>
-
-        </div>
+        <a
+          href="contact.html"
+          class="photo-card-link"
+        >
+          Enquire →
+        </a>
 
       </article>
 
 
 
-      <!-- MODEL -->
+      <!-- MODELS -->
 
-      <article class="photo-category reveal">
+      <article class="photo-card reveal">
 
         <span class="photo-number">
           04
         </span>
 
-        <div class="photo-category-content">
+        <div class="photo-card-line"></div>
 
-          <p class="eyebrow">
-            FASHION
-          </p>
+        <h3>
+          Models
+        </h3>
 
-          <h2>
-            Model
-          </h2>
+        <p>
+          Fashion-forward imagery with a clean luxury
+          aesthetic for portfolios and campaigns.
+        </p>
 
-          <p>
-
-            Fashion-forward imagery with a clean luxury
-            aesthetic for portfolios and campaigns.
-
-          </p>
-
-          <a
-            href="contact.html"
-            class="text-link"
-          >
-            Book a model shoot →
-          </a>
-
-        </div>
+        <a
+          href="contact.html"
+          class="photo-card-link"
+        >
+          Enquire →
+        </a>
 
       </article>
 
@@ -404,37 +337,29 @@
 
       <!-- PRE-SHOOT -->
 
-      <article class="photo-category reveal">
+      <article class="photo-card reveal">
 
         <span class="photo-number">
           05
         </span>
 
-        <div class="photo-category-content">
+        <div class="photo-card-line"></div>
 
-          <p class="eyebrow">
-            BEFORE THE DAY
-          </p>
+        <h3>
+          Pre-Shoot
+        </h3>
 
-          <h2>
-            Pre-Shoot
-          </h2>
+        <p>
+          Romantic and cinematic sessions created
+          around your connection and personality.
+        </p>
 
-          <p>
-
-            Romantic and cinematic sessions created
-            to tell your story before the big day.
-
-          </p>
-
-          <a
-            href="contact.html"
-            class="text-link"
-          >
-            Plan a pre-shoot →
-          </a>
-
-        </div>
+        <a
+          href="contact.html"
+          class="photo-card-link"
+        >
+          Enquire →
+        </a>
 
       </article>
 
@@ -442,74 +367,59 @@
 
       <!-- CINEMATIC -->
 
-      <article class="photo-category reveal">
+      <article class="photo-card reveal">
 
         <span class="photo-number">
           06
         </span>
 
-        <div class="photo-category-content">
+        <div class="photo-card-line"></div>
 
-          <p class="eyebrow">
-            MOVING STORIES
-          </p>
+        <h3>
+          Cinematic
+        </h3>
 
-          <h2>
-            Cinematic
-          </h2>
+        <p>
+          Visual storytelling with atmosphere,
+          movement and a film-inspired finishing style.
+        </p>
 
-          <p>
-
-            Photography and visual storytelling
-            designed with a cinematic eye.
-
-          </p>
-
-          <a
-            href="contact.html"
-            class="text-link"
-          >
-            Create your film →
-          </a>
-
-        </div>
+        <a
+          href="contact.html"
+          class="photo-card-link"
+        >
+          Enquire →
+        </a>
 
       </article>
-
 
     </section>
 
 
 
     <!-- ===================================================
-         SIGNATURE
+         QUOTE
     ==================================================== -->
 
-    <section class="photo-signature reveal">
+    <section class="photo-quote reveal">
 
+      <div>
 
-      <p class="eyebrow">
-        THE SIGNATURE
-      </p>
+        <p class="photo-eyebrow">
+          THE PHILOSOPHY
+        </p>
 
+        <h2>
+          We don't just
+          <br>
+          <em>take pictures.</em>
+        </h2>
 
-      <h2>
-        Light.
-        <br>
-        Emotion.
-        <br>
-        <em>Story.</em>
-      </h2>
+        <p>
+          We preserve the feeling behind them.
+        </p>
 
-
-      <p>
-
-        Our approach is simple:
-        find the light, feel the moment,
-        and create something that lasts.
-
-      </p>
-
+      </div>
 
     </section>
 
@@ -519,31 +429,26 @@
          CTA
     ==================================================== -->
 
-    <section class="cta reveal">
+    <section class="photo-cta reveal">
 
-
-      <p class="eyebrow">
-        YOUR MOMENT IS WAITING
+      <p class="photo-eyebrow">
+        LET'S CREATE
       </p>
 
-
       <h2>
-        Let's create
+        Ready to tell
         <br>
-        <em>something timeless.</em>
+        <em>your story?</em>
       </h2>
-
 
       <a
         href="contact.html"
-        class="btn gold"
+        class="photo-btn photo-btn-gold"
       >
         Book a Session
       </a>
 
-
     </section>
-
 
   </main>
 
@@ -553,18 +458,15 @@
        FOOTER
   ====================================================== -->
 
-  <footer>
+  <footer class="photo-footer">
 
-
-    <div class="footer-logo">
+    <div class="photo-footer-logo">
       DAMITH <b>PHOTO</b>
     </div>
-
 
     <p>
       Luxury photography &amp; cinematic videography.
     </p>
-
 
     <p>
 
@@ -588,23 +490,18 @@
 
     </p>
 
-
     <small>
       © 2026 Damith Photo Business.
       All rights reserved.
     </small>
 
-
   </footer>
 
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
+  <!-- Photography Page JS -->
 
-  <script src="script.js"></script>
-
+  <script src="photography.js"></script>
 
 </body>
 
