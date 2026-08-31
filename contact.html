@@ -1,4 +1,534 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | Damith Photo Business</title><link rel="stylesheet" href="css/style.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"></head><body>
-<header class="nav"><a class="logo" href="index.html"><span>D</span> DAMITH <b>PHOTO</b></a><button class="menu">☰</button><nav><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="photography.html">Photography</a><a href="services.html">Services</a><a href="about.html">About</a><a class="active" href="contact.html">Contact</a></nav></header>
-<main><section class="page-head"><p class="eyebrow">LET'S TALK</p><h1>Make it <em>memorable.</em></h1><p>Tell us what you're planning. We'll turn it into a visual experience.</p></section><section class="contact-grid"><div><div class="contact-item"><small>WHATSAPP</small><a href="https://wa.me/94703803051" target="_blank">070 380 3051</a></div><div class="contact-item"><small>BB / CALL</small><a href="tel:+94721177288">072 117 7288</a></div><div class="contact-item"><small>FACEBOOK</small><a href="https://www.facebook.com/share/1DrWQybNDw/?mibextid=wwXIfr." target="_blank">Damith Photo Business ↗</a></div></div>
-<form onsubmit="return sendWhatsApp(event)"><input id="name" placeholder="Your name" required><input id="service" placeholder="Service you're interested in" required><input id="date" placeholder="Preferred date"><textarea id="message" rows="6" placeholder="Tell us a little about your plan..." required></textarea><button class="btn gold" type="submit">Send via WhatsApp ↗</button></form></section></main><footer><div class="logo"><span>D</span> DAMITH <b>PHOTO</b></div><p>WhatsApp: 070 380 3051 · BB: 072 117 7288</p></footer><script src="js/script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Contact | Damith Photo</title>
+
+  <meta
+    name="description"
+    content="Contact Damith Photo for photography, weddings, portraits, events, pre-shoots and cinematic visual stories."
+  >
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CONTACT CSS -->
+
+  <link
+    rel="stylesheet"
+    href="contact.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="contact-nav">
+
+
+    <!-- LOGO -->
+
+    <a
+      href="index.html"
+      class="contact-logo"
+      aria-label="Damith Photo Home"
+    >
+
+      <img
+        src="5F45AFE8-B9B1-4BA0-9036-7DCE2C231B13.png"
+        alt="Damith Photo Logo"
+      >
+
+    </a>
+
+
+    <!-- MOBILE MENU -->
+
+    <button
+      class="contact-menu"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="contact-navigation"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <!-- NAVIGATION -->
+
+    <nav
+      id="contact-navigation"
+      class="contact-navigation"
+      aria-label="Main navigation"
+    >
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="profile.html">
+        Profile
+      </a>
+
+      <a href="photography.html">
+        Photography
+      </a>
+
+      <a href="services.html">
+        Services
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a
+        href="contact.html"
+        class="active"
+      >
+        Contact
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="contact-hero">
+
+
+      <div class="contact-hero-content">
+
+
+        <p class="contact-eyebrow">
+          LET'S TALK • DAMITH PHOTO
+        </p>
+
+
+        <h1>
+          Make it
+          <br>
+          <em>memorable.</em>
+        </h1>
+
+
+        <p class="contact-lead">
+
+          Tell us what you're planning.
+          We'll turn it into a visual experience.
+
+        </p>
+
+
+        <!-- CONTACT DETAILS -->
+
+        <div class="contact-details">
+
+
+          <!-- WHATSAPP -->
+
+          <a
+            href="https://wa.me/94703803051"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-detail"
+          >
+
+            <span class="contact-detail-label">
+              WHATSAPP
+            </span>
+
+            <span class="contact-detail-value">
+              070 380 3051
+            </span>
+
+          </a>
+
+
+          <!-- CALL -->
+
+          <a
+            href="tel:+94721177288"
+            class="contact-detail"
+          >
+
+            <span class="contact-detail-label">
+              BB / CALL
+            </span>
+
+            <span class="contact-detail-value">
+              072 117 7288
+            </span>
+
+          </a>
+
+
+          <!-- FACEBOOK -->
+
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-detail"
+          >
+
+            <span class="contact-detail-label">
+              FACEBOOK
+            </span>
+
+            <span class="contact-detail-value">
+              Damith Photo Business ↗
+            </span>
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- HERO MARK -->
+
+      <div class="contact-hero-mark">
+
+
+        <div
+          class="contact-ring"
+          aria-hidden="true"
+        ></div>
+
+
+        <img
+          src="5F45AFE8-B9B1-4BA0-9036-7DCE2C231B13.png"
+          alt="Damith Photo"
+        >
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         BOOKING SECTION
+    ==================================================== -->
+
+    <section class="contact-booking">
+
+
+      <div class="contact-booking-intro">
+
+
+        <p class="contact-eyebrow">
+          BOOK YOUR SESSION
+        </p>
+
+
+        <h2>
+          Let's create
+          <br>
+          <em>something beautiful.</em>
+        </h2>
+
+
+        <p>
+          Fill in the details below and we'll get back
+          to you through WhatsApp.
+        </p>
+
+
+      </div>
+
+
+
+      <!-- FORM -->
+
+      <form
+        id="contact-form"
+        class="contact-form"
+      >
+
+
+        <!-- NAME -->
+
+        <div class="contact-field">
+
+          <label for="client-name">
+            Your name
+          </label>
+
+          <input
+            type="text"
+            id="client-name"
+            name="name"
+            placeholder="Your name"
+            autocomplete="name"
+            required
+          >
+
+        </div>
+
+
+
+        <!-- SERVICE -->
+
+        <div class="contact-field">
+
+          <label for="service">
+            Service you're interested in
+          </label>
+
+          <select
+            id="service"
+            name="service"
+            required
+          >
+
+            <option
+              value=""
+              selected
+              disabled
+            >
+              Select a service
+            </option>
+
+            <option value="Wedding">
+              Wedding
+            </option>
+
+            <option value="Portrait">
+              Portrait
+            </option>
+
+            <option value="Events">
+              Events
+            </option>
+
+            <option value="Models">
+              Models
+            </option>
+
+            <option value="Pre-Shoot">
+              Pre-Shoot
+            </option>
+
+            <option value="Cinematic">
+              Cinematic
+            </option>
+
+            <option value="Other">
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <!-- DATE -->
+
+        <div class="contact-field">
+
+          <label for="date">
+            Preferred date
+          </label>
+
+          <input
+            type="date"
+            id="date"
+            name="date"
+          >
+
+        </div>
+
+
+
+        <!-- MESSAGE -->
+
+        <div class="contact-field contact-field-message">
+
+          <label for="message">
+            Tell us a little about your plan
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="7"
+            placeholder="Tell us a little about your plan..."
+          ></textarea>
+
+        </div>
+
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="contact-submit"
+        >
+
+          Send via WhatsApp
+          <span>↗</span>
+
+        </button>
+
+
+        <p
+          id="form-status"
+          class="form-status"
+          aria-live="polite"
+        ></p>
+
+
+      </form>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         PHILOSOPHY
+    ==================================================== -->
+
+    <section class="contact-quote">
+
+
+      <p class="contact-eyebrow">
+        DAMITH PHOTO
+      </p>
+
+
+      <h2>
+        Your moment.
+        <br>
+        <em>Your story.</em>
+      </h2>
+
+
+      <p>
+        Let's make it unforgettable.
+      </p>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="contact-footer">
+
+
+    <div class="contact-footer-logo">
+
+      DAMITH <b>PHOTO</b>
+
+    </div>
+
+
+    <p>
+      Luxury photography &amp; cinematic videography.
+    </p>
+
+
+    <p>
+
+      WhatsApp:
+
+      <a
+        href="https://wa.me/94703803051"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        070 380 3051
+      </a>
+
+      <span> · </span>
+
+      BB:
+
+      <a href="tel:+94721177288">
+        072 117 7288
+      </a>
+
+    </p>
+
+
+    <small>
+      © 2026 Damith Photo Business.
+      All rights reserved.
+    </small>
+
+
+  </footer>
+
+
+
+  <!-- CONTACT JAVASCRIPT -->
+
+  <script src="contact.js"></script>
+
+
+</body>
+
+</html>
