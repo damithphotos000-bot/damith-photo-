@@ -14,10 +14,12 @@
 
   <meta
     name="description"
-    content="Photography and cinematic visual services by Damith Photo — weddings, pre-shoots, birthdays, events, portraits, models and cinematic visuals."
+    content="Photography and cinematic visual services by Damith Photo — birthdays, events, weddings, portraits, models and cinematic stories."
   >
 
-  <!-- GOOGLE FONTS -->
+  <!-- =====================================================
+       GOOGLE FONTS
+  ====================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -32,7 +34,10 @@
     rel="stylesheet"
   >
 
-  <!-- SERVICES CSS -->
+
+  <!-- =====================================================
+       SERVICES CSS
+  ====================================================== -->
 
   <link
     rel="stylesheet"
@@ -51,6 +56,7 @@
 
   <header class="service-nav">
 
+
     <!-- LOGO -->
 
     <a
@@ -67,7 +73,9 @@
     </a>
 
 
-    <!-- MOBILE MENU -->
+    <!-- ===================================================
+         MOBILE MENU BUTTON
+    ==================================================== -->
 
     <button
       class="service-menu"
@@ -84,7 +92,9 @@
     </button>
 
 
-    <!-- NAVIGATION -->
+    <!-- ===================================================
+         NAVIGATION
+    ==================================================== -->
 
     <nav
       id="service-navigation"
@@ -107,6 +117,7 @@
       <a
         href="services.html"
         class="active"
+        aria-current="page"
       >
         Services
       </a>
@@ -132,11 +143,14 @@
   <main>
 
 
-    <!-- =====================================================
+    <!-- ===================================================
          HERO
-    ====================================================== -->
+    ==================================================== -->
 
     <section class="service-hero">
+
+
+      <!-- HERO CONTENT -->
 
       <div class="service-hero-content">
 
@@ -144,11 +158,13 @@
           WHAT WE OFFER • DAMITH PHOTO
         </p>
 
+
         <h1>
           Services
           <br>
           <em>crafted for you.</em>
         </h1>
+
 
         <p class="service-lead">
 
@@ -158,30 +174,34 @@
 
         </p>
 
-        <a
-          href="#choose-story"
-          class="service-btn"
-        >
-          Explore Services
-        </a>
-
       </div>
 
 
-      <!-- DECORATIVE MARK -->
+
+      <!-- =================================================
+           HERO DECORATION
+      ================================================== -->
 
       <div
         class="service-hero-mark"
         aria-hidden="true"
       >
 
-        <div class="service-circle circle-one"></div>
+        <div
+          class="service-circle circle-one"
+        ></div>
 
-        <div class="service-circle circle-two"></div>
+
+        <div
+          class="service-circle circle-two"
+        ></div>
+
 
         <div class="service-mark-text">
 
-          <span>D</span>
+          <span>
+            D
+          </span>
 
           <small>
             DAMITH<br>
@@ -197,13 +217,16 @@
 
 
     <!-- =====================================================
-         CHOOSE YOUR STORY
+         SERVICES SECTION
     ====================================================== -->
 
     <section
       class="services-section"
-      id="choose-story"
+      id="services"
     >
+
+
+      <!-- SECTION HEADING -->
 
       <div class="services-heading">
 
@@ -211,292 +234,314 @@
           OUR SERVICES
         </p>
 
+
         <h2>
           Choose your
           <br>
           <em>story.</em>
         </h2>
 
-        <p class="service-select-intro">
-          Select the photography experience you're looking for.
-        </p>
-
       </div>
 
 
 
-      <!-- ===================================================
-           SERVICE SELECTOR
-      ==================================================== -->
+      <!-- =================================================
+           SERVICES LIST
+           ALL 6 SERVICES VERTICAL
+      ================================================== -->
 
-      <div class="service-selector">
+      <div class="services-list">
 
 
-        <!-- WEDDING -->
 
-        <a
-          href="contact.html?service=Wedding"
-          class="service-choice"
+        <!-- =================================================
+             01 — BIRTHDAY SHOOTS
+        ================================================== -->
+
+        <article
+          class="service-item reveal"
+          data-service="Birthday Shoots"
         >
 
-          <span class="choice-number">
+          <div class="service-number">
             01
-          </span>
+          </div>
 
-          <div class="choice-content">
+
+          <div class="service-item-content">
 
             <h3>
-              Wedding
+              Birthday Shoots
             </h3>
 
+
             <p>
-              Timeless wedding photography,
-              emotional moments and elegant
-              editorial portraits.
+              Stylish birthday portraits and celebration
+              coverage designed to capture every special
+              moment, emotion and detail beautifully.
             </p>
+
+
+            <a
+              href="contact.html?service=Birthday%20Shoots"
+              class="service-link"
+              aria-label="Choose Birthday Shoots"
+            >
+
+              Choose Birthday Shoots
+
+              <span>
+                →
+              </span>
+
+            </a>
 
           </div>
 
-          <span class="choice-arrow">
-            →
-          </span>
-
-        </a>
+        </article>
 
 
 
-        <!-- PRE SHOOT -->
+        <!-- =================================================
+             02 — EVENTS
+        ================================================== -->
 
-        <a
-          href="contact.html?service=Pre-Shoot"
-          class="service-choice"
+        <article
+          class="service-item reveal"
+          data-service="Events"
         >
 
-          <span class="choice-number">
+          <div class="service-number">
             02
-          </span>
-
-          <div class="choice-content">
-
-            <h3>
-              Pre-Shoot
-            </h3>
-
-            <p>
-              Romantic couple sessions,
-              creative locations and cinematic
-              pre-wedding storytelling.
-            </p>
-
           </div>
 
-          <span class="choice-arrow">
-            →
-          </span>
 
-        </a>
-
-
-
-        <!-- BIRTHDAY -->
-
-        <a
-          href="contact.html?service=Birthday"
-          class="service-choice"
-        >
-
-          <span class="choice-number">
-            03
-          </span>
-
-          <div class="choice-content">
-
-            <h3>
-              Birthday
-            </h3>
-
-            <p>
-              Stylish birthday portraits and
-              celebration coverage designed
-              around your special day.
-            </p>
-
-          </div>
-
-          <span class="choice-arrow">
-            →
-          </span>
-
-        </a>
-
-
-
-        <!-- EVENTS -->
-
-        <a
-          href="contact.html?service=Events"
-          class="service-choice"
-        >
-
-          <span class="choice-number">
-            04
-          </span>
-
-          <div class="choice-content">
+          <div class="service-item-content">
 
             <h3>
               Events
             </h3>
 
+
             <p>
-              Complete event photography
-              with cinematic storytelling
-              from beginning to end.
+              Complete event photography with cinematic
+              storytelling and polished coverage from
+              beginning to end.
             </p>
+
+
+            <a
+              href="contact.html?service=Events"
+              class="service-link"
+              aria-label="Choose Events"
+            >
+
+              Choose Events
+
+              <span>
+                →
+              </span>
+
+            </a>
 
           </div>
 
-          <span class="choice-arrow">
-            →
-          </span>
-
-        </a>
+        </article>
 
 
 
-        <!-- PORTRAIT -->
+        <!-- =================================================
+             03 — WEDDING
+        ================================================== -->
 
-        <a
-          href="contact.html?service=Portrait"
-          class="service-choice"
+        <article
+          class="service-item reveal"
+          data-service="Wedding"
         >
 
-          <span class="choice-number">
-            05
-          </span>
+          <div class="service-number">
+            03
+          </div>
 
-          <div class="choice-content">
+
+          <div class="service-item-content">
+
+            <h3>
+              Wedding
+            </h3>
+
+
+            <p>
+              Timeless wedding photography capturing
+              candid emotions, meaningful details and
+              elegant editorial portraits.
+            </p>
+
+
+            <a
+              href="contact.html?service=Wedding"
+              class="service-link"
+              aria-label="Choose Wedding"
+            >
+
+              Choose Wedding
+
+              <span>
+                →
+              </span>
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             04 — PORTRAIT
+        ================================================== -->
+
+        <article
+          class="service-item reveal"
+          data-service="Portrait"
+        >
+
+          <div class="service-number">
+            04
+          </div>
+
+
+          <div class="service-item-content">
 
             <h3>
               Portrait
             </h3>
 
+
             <p>
-              Luxury individual, couple and
-              personal branding portraits
-              created around your style.
+              Luxury individual, couple and personal
+              branding portraits created around your
+              personality, style and confidence.
             </p>
+
+
+            <a
+              href="contact.html?service=Portrait"
+              class="service-link"
+              aria-label="Choose Portrait"
+            >
+
+              Choose Portrait
+
+              <span>
+                →
+              </span>
+
+            </a>
 
           </div>
 
-          <span class="choice-arrow">
-            →
-          </span>
-
-        </a>
+        </article>
 
 
 
-        <!-- MODELS -->
+        <!-- =================================================
+             05 — MODELS
+        ================================================== -->
 
-        <a
-          href="contact.html?service=Models"
-          class="service-choice"
+        <article
+          class="service-item reveal"
+          data-service="Models"
         >
 
-          <span class="choice-number">
-            06
-          </span>
+          <div class="service-number">
+            05
+          </div>
 
-          <div class="choice-content">
+
+          <div class="service-item-content">
 
             <h3>
               Models
             </h3>
 
+
             <p>
-              Fashion-focused photography
-              for model portfolios, campaigns
+              Fashion-focused photography for model
+              portfolios, personal brands, campaigns
               and creative projects.
             </p>
 
+
+            <a
+              href="contact.html?service=Models"
+              class="service-link"
+              aria-label="Choose Models"
+            >
+
+              Choose Models
+
+              <span>
+                →
+              </span>
+
+            </a>
+
           </div>
 
-          <span class="choice-arrow">
-            →
-          </span>
-
-        </a>
+        </article>
 
 
 
-        <!-- CINEMATIC -->
+        <!-- =================================================
+             06 — CINEMATIC
+        ================================================== -->
 
-        <a
-          href="contact.html?service=Cinematic"
-          class="service-choice"
+        <article
+          class="service-item reveal"
+          data-service="Cinematic"
         >
 
-          <span class="choice-number">
-            07
-          </span>
+          <div class="service-number">
+            06
+          </div>
 
-          <div class="choice-content">
+
+          <div class="service-item-content">
 
             <h3>
               Cinematic
             </h3>
 
+
             <p>
-              Film-inspired visual storytelling
-              with atmosphere, movement and
-              premium cinematic finishing.
+              Film-inspired visual storytelling with
+              atmosphere, movement and a premium
+              cinematic finishing style.
             </p>
+
+
+            <a
+              href="contact.html?service=Cinematic"
+              class="service-link"
+              aria-label="Choose Cinematic"
+            >
+
+              Choose Cinematic
+
+              <span>
+                →
+              </span>
+
+            </a>
 
           </div>
 
-          <span class="choice-arrow">
-            →
-          </span>
-
-        </a>
-
-
-
-        <!-- CUSTOM -->
-
-        <a
-          href="contact.html?service=Other"
-          class="service-choice service-choice-last"
-        >
-
-          <span class="choice-number">
-            08
-          </span>
-
-          <div class="choice-content">
-
-            <h3>
-              Something Else
-            </h3>
-
-            <p>
-              Have another photography idea?
-              Tell us what you're planning and
-              we'll create it with you.
-            </p>
-
-          </div>
-
-          <span class="choice-arrow">
-            →
-          </span>
-
-        </a>
+        </article>
 
 
       </div>
-
 
     </section>
 
@@ -506,11 +551,15 @@
          PROCESS
     ====================================================== -->
 
-    <section class="service-process">
+    <section
+      class="service-process reveal"
+    >
+
 
       <p class="service-eyebrow">
         HOW IT WORKS
       </p>
+
 
       <h2>
         Simple process.
@@ -519,8 +568,11 @@
       </h2>
 
 
+
       <div class="process-grid">
 
+
+        <!-- CONNECT -->
 
         <div class="process-card">
 
@@ -528,19 +580,22 @@
             01
           </span>
 
+
           <h3>
             Connect
           </h3>
 
+
           <p>
-            Choose your service and tell us
-            about your photography idea,
-            event or session.
+            Tell us about your event, idea or
+            photography session.
           </p>
 
         </div>
 
 
+
+        <!-- PLAN -->
 
         <div class="process-card">
 
@@ -548,18 +603,22 @@
             02
           </span>
 
+
           <h3>
             Plan
           </h3>
 
+
           <p>
             We discuss the location, style,
-            timing, package and details.
+            timing and details.
           </p>
 
         </div>
 
 
+
+        <!-- CREATE -->
 
         <div class="process-card">
 
@@ -567,9 +626,11 @@
             03
           </span>
 
+
           <h3>
             Create
           </h3>
+
 
           <p>
             We capture and craft your story
@@ -589,11 +650,15 @@
          FINAL CTA
     ====================================================== -->
 
-    <section class="service-cta">
+    <section
+      class="service-cta reveal"
+    >
+
 
       <p class="service-eyebrow">
         LET'S CREATE
       </p>
+
 
       <h2>
         Your moment.
@@ -601,9 +666,11 @@
         <em>Our vision.</em>
       </h2>
 
+
       <p>
         Ready to create something memorable?
       </p>
+
 
       <a
         href="contact.html"
@@ -611,6 +678,7 @@
       >
         Contact Us
       </a>
+
 
     </section>
 
@@ -624,6 +692,7 @@
   ====================================================== -->
 
   <footer class="service-footer">
+
 
     <div class="service-footer-logo">
 
@@ -649,11 +718,17 @@
         070 380 3051
       </a>
 
-      <span> · </span>
+
+      <span>
+        ·
+      </span>
+
 
       BB:
 
-      <a href="tel:+94721177288">
+      <a
+        href="tel:+94721177288"
+      >
         072 117 7288
       </a>
 
@@ -661,18 +736,17 @@
 
 
     <small>
-
       © 2026 Damith Photo Business.
       All rights reserved.
-
     </small>
+
 
   </footer>
 
 
 
   <!-- =====================================================
-       SERVICES JS
+       SERVICES JAVASCRIPT
   ====================================================== -->
 
   <script src="services.js"></script>
