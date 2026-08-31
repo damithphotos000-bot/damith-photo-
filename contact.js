@@ -1,115 +1,340 @@
 /* =========================================================
    DAMITH PHOTO
-   SERVICES JAVASCRIPT
+   CONTACT PAGE JAVASCRIPT
 ========================================================= */
 
 
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const contactMenu =
+  document.querySelector(".contact-menu");
+
+const contactNavigation =
+  document.querySelector(".contact-navigation");
 
 
-  /* =======================================================
-     MOBILE MENU
-  ======================================================= */
+if(contactMenu && contactNavigation){
 
-  const menuButton =
-    document.querySelector(".service-menu");
+  contactMenu.addEventListener("click", () => {
 
-  const navigation =
-    document.querySelector(".service-navigation");
+    const isOpen =
+      contactNavigation.classList.toggle("open");
 
+    contactMenu.classList.toggle(
+      "open",
+      isOpen
+    );
 
-  if (menuButton && navigation) {
+    contactMenu.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
 
-    menuButton.addEventListener("click", function () {
+    contactMenu.setAttribute(
+      "aria-label",
+      isOpen
+        ? "Close navigation menu"
+        : "Open navigation menu"
+    );
 
-      const isOpen =
-        menuButton.classList.toggle("open");
-
-      navigation.classList.toggle("open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        isOpen ? "true" : "false"
-      );
-
-    });
-
-
-    /* Close menu after clicking a link */
-
-    const navigationLinks =
-      navigation.querySelectorAll("a");
+  });
 
 
-    navigationLinks.forEach(function (link) {
+  /* CLOSE AFTER NAVIGATION CLICK */
 
-      link.addEventListener("click", function () {
+  contactNavigation
+    .querySelectorAll("a")
+    .forEach(link => {
 
-        menuButton.classList.remove("open");
+      link.addEventListener("click", () => {
 
-        navigation.classList.remove("open");
+        contactNavigation.classList.remove("open");
 
-        menuButton.setAttribute(
+        contactMenu.classList.remove("open");
+
+        contactMenu.setAttribute(
           "aria-expanded",
           "false"
+        );
+
+        contactMenu.setAttribute(
+          "aria-label",
+          "Open navigation menu"
         );
 
       });
 
     });
 
+}
+
+
+/* =========================================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+========================================================= */
+
+document.addEventListener("click", event => {
+
+  if(
+    !contactMenu ||
+    !contactNavigation
+  ){
+    return;
   }
 
 
-
-  /* =======================================================
-     SCROLL REVEAL
-  ======================================================= */
-
-  const revealElements =
-    document.querySelectorAll(".reveal");
+  const clickedMenu =
+    contactMenu.contains(event.target);
 
 
-  if ("IntersectionObserver" in window) {
+  const clickedNavigation =
+    contactNavigation.contains(event.target);
 
-    const observer =
-      new IntersectionObserver(
-        function (entries) {
 
-          entries.forEach(function (entry) {
+  if(
+    !clickedMenu &&
+    !clickedNavigation
+  ){
 
-            if (entry.isIntersecting) {
+    contactNavigation.classList.remove("open");
 
-              entry.target.classList.add("visible");
+    contactMenu.classList.remove("open");
 
-              observer.unobserve(entry.target);
+    contactMenu.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
-            }
+    contactMenu.setAttribute(
+      "aria-label",
+      "Open navigation menu"
+    );
 
-          });
+  }
 
-        },
-        {
-          threshold:0.12
+});
+
+
+/* =========================================================
+   ESC KEY
+========================================================= */
+
+document.addEventListener("keydown", event => {
+
+  if(event.key !== "Escape"){
+    return;
+  }
+
+
+  if(
+    !contactMenu ||
+    !contactNavigation
+  ){
+    return;
+  }
+
+
+  contactNavigation.classList.remove("open");
+
+  contactMenu.classList.remove("open");
+
+  contactMenu.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+  contactMenu.setAttribute(
+    "aria-label",
+    "Open navigation menu"
+  );
+
+});
+
+
+/* =========================================================
+   BOOKING FORM
+========================================================= */
+
+const contactForm =
+  document.getElementById("contact-form");
+
+const formStatus =
+  document.getElementById("form-status");
+
+
+if(contactForm){
+
+  contactForm.addEventListener(
+    "submit",
+    event => {
+
+      event.preventDefault();
+
+
+      /* GET VALUES */
+
+      const name =
+        document
+          .getElementById("client-name")
+          .value
+          .trim();
+
+
+      const service =
+        document
+          .getElementById("service")
+          .value;
+
+
+      const date =
+        document
+          .getElementById("date")
+          .value;
+
+
+      const message =
+        document
+          .getElementById("message")
+          .value
+          .trim();
+
+
+      /* VALIDATION */
+
+      if(!name){
+
+        if(formStatus){
+          formStatus.textContent =
+            "Please enter your name.";
         }
+
+        return;
+      }
+
+
+      if(!service){
+
+        if(formStatus){
+          formStatus.textContent =
+            "Please select a service.";
+        }
+
+        return;
+      }
+
+
+      /* DATE FORMAT */
+
+      let formattedDate =
+        "Not specified";
+
+
+      if(date){
+
+        const selectedDate =
+          new Date(
+            date + "T00:00:00"
+          );
+
+
+        formattedDate =
+          selectedDate.toLocaleDateString(
+            "en-GB",
+            {
+              day:"2-digit",
+              month:"long",
+              year:"numeric"
+            }
+          );
+
+      }
+
+
+      /* WHATSAPP MESSAGE */
+
+      let whatsappMessage =
+        "Hello Damith Photo!%0A%0A";
+
+
+      whatsappMessage +=
+        "*Booking Enquiry*%0A";
+
+
+      whatsappMessage +=
+        "--------------------%0A";
+
+
+      whatsappMessage +=
+        "Name: " +
+        encodeURIComponent(name) +
+        "%0A";
+
+
+      whatsappMessage +=
+        "Service: " +
+        encodeURIComponent(service) +
+        "%0A";
+
+
+      whatsappMessage +=
+        "Preferred Date: " +
+        encodeURIComponent(formattedDate) +
+        "%0A";
+
+
+      if(message){
+
+        whatsappMessage +=
+          "Message: " +
+          encodeURIComponent(message) +
+          "%0A";
+
+      }
+
+
+      whatsappMessage +=
+        "%0AThank you!";
+
+
+      /* WHATSAPP URL */
+
+      const whatsappURL =
+        "https://wa.me/94703803051?text=" +
+        whatsappMessage;
+
+
+      /* STATUS */
+
+      if(formStatus){
+
+        formStatus.textContent =
+          "Opening WhatsApp...";
+
+      }
+
+
+      /* OPEN WHATSAPP */
+
+      window.open(
+        whatsappURL,
+        "_blank",
+        "noopener,noreferrer"
       );
 
+    }
+  );
 
-    revealElements.forEach(function (element) {
+}
 
-      observer.observe(element);
 
-    });
+/* =========================================================
+   PAGE READY
+========================================================= */
 
-  } else {
+window.addEventListener("load", () => {
 
-    revealElements.forEach(function (element) {
-
-      element.classList.add("visible");
-
-    });
-
-  }
-
+  document.body.classList.add("page-ready");
 
 });
